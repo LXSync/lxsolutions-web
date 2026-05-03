@@ -190,10 +190,10 @@ export default function Home() {
               <div className="co-card co-media rw d2">
                 <div className="co-num">02 · Contenido & YouTube</div>
                 <div className="co-name">LXMEDIA</div>
-                <div className="co-tag">YouTube · Producción · Monetización</div>
+                <div className="co-tag">YouTube · Producción · Canal propio</div>
                 <p className="co-desc">
-                  Creamos contenido de video profesional para YouTube enfocado en automatización e IA para empresas.
-                  Generamos ingresos recurrentes para nuestros clientes a través de canales propios.
+                  Creamos y gestionamos el canal de YouTube de tu empresa. Producimos el contenido,
+                  lo publicamos y hacemos crecer tu audiencia — para que tu marca tenga presencia real en YouTube.
                 </p>
                 <a data-nav="empresas" className="co-link" style={{ cursor: 'none' }}>
                   Saber más
@@ -208,8 +208,8 @@ export default function Home() {
                 <div className="co-name">LXVIRAL</div>
                 <div className="co-tag">Instagram · TikTok · Viral</div>
                 <p className="co-desc">
-                  Estrategia y producción de contenido para Instagram y TikTok centrado en automatización e IA.
-                  Crecimiento orgánico, comunidades activas y contenido que convierte.
+                  Hacemos viral tu empresa en Instagram y TikTok. Nos encargamos de la estrategia,
+                  la producción y la publicación — para que tu marca crezca y llegue a miles de personas.
                 </p>
                 <a data-nav="empresas" className="co-link" style={{ cursor: 'none' }}>
                   Saber más
@@ -371,15 +371,15 @@ export default function Home() {
               </div>
               <div className="emp-right">
                 <p className="emp-desc">
-                  Creamos canales de YouTube profesionales para empresas del sector de la automatización e IA. Producimos
-                  los videos, gestionamos el canal y monetizamos la audiencia — generando una fuente de ingresos recurrente
-                  para nuestros clientes mientras posicionan su marca como referente.
+                  Creamos y gestionamos el canal de YouTube de tu empresa desde cero. Nos encargamos de todo —
+                  guion, grabación, edición y publicación — para que tu marca tenga presencia profesional en YouTube
+                  sin que tengas que dedicarle tiempo.
                 </p>
                 <div className="emp-feats">
+                  <div className="emp-feat">Creación del canal y configuración profesional desde cero</div>
                   <div className="emp-feat">Producción completa de video: guion, grabación, edición y publicación</div>
-                  <div className="emp-feat">Contenido enfocado en automatización, IA y productividad empresarial</div>
-                  <div className="emp-feat">Estrategia de crecimiento orgánico: SEO en YouTube, thumbnails y títulos optimizados</div>
-                  <div className="emp-feat">Monetización del canal: AdSense, sponsorships y productos digitales</div>
+                  <div className="emp-feat">Contenido adaptado a tu empresa, tu sector y tu audiencia objetivo</div>
+                  <div className="emp-feat">Estrategia de crecimiento: SEO en YouTube, thumbnails y títulos optimizados para que te encuentren</div>
                 </div>
               </div>
             </div>
@@ -407,15 +407,15 @@ export default function Home() {
               </div>
               <div className="emp-right">
                 <p className="emp-desc">
-                  Estrategia y producción de contenido para Instagram y TikTok con foco en automatización, IA y tecnología
-                  para empresas. Creamos contenido que educa, entretiene y convierte — generando comunidades activas que
-                  se traducen en clientes reales.
+                  Hacemos viral tu empresa en Instagram y TikTok. Creamos el contenido de tu marca,
+                  lo publicamos en tus cuentas y lo optimizamos para que llegue al máximo de personas —
+                  tú solo tienes que ver cómo crece tu audiencia.
                 </p>
                 <div className="emp-feats">
-                  <div className="emp-feat">Producción de reels, carruseles y videos cortos optimizados para cada plataforma</div>
-                  <div className="emp-feat">Estrategia de contenido mensual: calendario, temas y formatos virales</div>
-                  <div className="emp-feat">Crecimiento orgánico con hashtags, colaboraciones y tendencias del sector</div>
-                  <div className="emp-feat">Conversión: de seguidor a lead cualificado con CTAs integrados en el contenido</div>
+                  <div className="emp-feat">Gestión completa de tu Instagram y TikTok: contenido, publicación y comunidad</div>
+                  <div className="emp-feat">Producción de reels, carruseles y videos cortos adaptados a tu empresa</div>
+                  <div className="emp-feat">Estrategia viral: formatos, tendencias y timing para maximizar el alcance</div>
+                  <div className="emp-feat">Tu empresa llega a miles de potenciales clientes sin invertir en publicidad</div>
                 </div>
               </div>
             </div>
