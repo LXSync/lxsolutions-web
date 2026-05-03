@@ -192,6 +192,22 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Video */}
+        <section className="section" style={{ paddingTop: 0, paddingBottom: '80px' }}>
+          <div className="container" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '24px' }}>
+            <div className="sec-label" style={{ justifyContent: 'center' }}>// Presentación</div>
+            <div style={{ position: 'relative', width: '300px', maxWidth: '100%', aspectRatio: '9/16', borderRadius: '12px', overflow: 'hidden', border: '1px solid var(--line)' }}>
+              <iframe
+                src="https://www.youtube.com/embed/BxShTQvAbCs"
+                title="LXSolutions presentación"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', border: 'none' }}
+              />
+            </div>
+          </div>
+        </section>
+
         {/* CTA */}
         <section className="section" style={{ paddingTop: 0, paddingBottom: '120px' }}>
           <div className="container">
