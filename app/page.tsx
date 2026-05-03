@@ -59,7 +59,7 @@ export default function Home() {
               <span className="ci-dot">·</span>
               <span className="ci-b red" id="ci-b2">LXMEDIA</span>
               <span className="ci-dot">·</span>
-              <span className="ci-b pink" id="ci-b3">LXVIRAL</span>
+              <span className="ci-b purple" id="ci-b3">LXVIRAL</span>
             </div>
           </div>
           <div className="ci-now" id="ci-now">
@@ -161,65 +161,6 @@ export default function Home() {
             <span className="h-brand-item media">LXMEDIA</span>
             <span className="h-brand-sep">·</span>
             <span className="h-brand-item viral">LXVIRAL</span>
-          </div>
-        </section>
-
-        {/* Company cards */}
-        <section className="section">
-          <div className="container">
-            <div className="sec-label">01 / Divisiones</div>
-            <div className="sec-title rw">Tres marcas.<br />Un sistema.</div>
-            <div className="co-grid">
-
-              <div className="co-card co-sync rw d1">
-                <div className="co-num">01 · Automatización e IA</div>
-                <div className="co-name">LXSYNC</div>
-                <div className="co-tag">Operativa · B2B · Diagnóstico</div>
-                <p className="co-desc">
-                  Diseñamos e implementamos flujos de automatización con IA a medida para empresas que ya no quieren
-                  depender de procesos manuales. Diagnóstico primero, implementación después.
-                </p>
-                <a href="https://lxsync-web.vercel.app" target="_blank" rel="noopener noreferrer" className="co-link">
-                  Visitar LXSYNC
-                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-                    <path d="M1 11L11 1M11 1H4M11 1v7" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                </a>
-              </div>
-
-              <div className="co-card co-media rw d2">
-                <div className="co-num">02 · Contenido & YouTube</div>
-                <div className="co-name">LXMEDIA</div>
-                <div className="co-tag">YouTube · Producción · Canal propio</div>
-                <p className="co-desc">
-                  Creamos y gestionamos el canal de YouTube de tu empresa. Producimos el contenido,
-                  lo publicamos y hacemos crecer tu audiencia — para que tu marca tenga presencia real en YouTube.
-                </p>
-                <a data-nav="empresas" className="co-link" style={{ cursor: 'none' }}>
-                  Saber más
-                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-                    <path d="M1 6h10M6 1l5 5-5 5" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                </a>
-              </div>
-
-              <div className="co-card co-viral rw d3">
-                <div className="co-num">03 · Redes Sociales</div>
-                <div className="co-name">LXVIRAL</div>
-                <div className="co-tag">Instagram · TikTok · Viral</div>
-                <p className="co-desc">
-                  Hacemos viral tu empresa en Instagram y TikTok. Nos encargamos de la estrategia,
-                  la producción y la publicación — para que tu marca crezca y llegue a miles de personas.
-                </p>
-                <a data-nav="empresas" className="co-link" style={{ cursor: 'none' }}>
-                  Saber más
-                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-                    <path d="M1 6h10M6 1l5 5-5 5" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                </a>
-              </div>
-
-            </div>
           </div>
         </section>
 
@@ -400,7 +341,7 @@ export default function Home() {
                   <span className="emp-tag">Comunidad</span>
                 </div>
                 <div className="emp-cta">
-                  <a data-nav="contacto" className="btn btn-p" style={{ cursor: 'none', background: 'var(--pink)', color: '#070707' }}>
+                  <a data-nav="contacto" className="btn btn-p" style={{ cursor: 'none', background: 'var(--purple)', color: '#070707' }}>
                     Hablar con LXVIRAL →
                   </a>
                 </div>

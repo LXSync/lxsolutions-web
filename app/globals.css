@@ -5,7 +5,7 @@
   --line:rgba(240,240,235,.08);--line-hi:rgba(240,240,235,.18);
   --accent:#7DD3FC;--accent-dim:rgba(125,211,252,.55);
   --red:#FF3030;--red-dim:rgba(255,48,48,.5);
-  --pink:#F9A8D4;--pink-dim:rgba(249,168,212,.5);
+  --purple:#A78BFA;--purple-dim:rgba(167,139,250,.5);
   --border:rgba(240,240,235,.07);--border-hi:rgba(240,240,235,.2);
   --f-sans:var(--font-outfit,'Outfit',sans-serif);--f-disp:var(--font-bebas,'Bebas Neue',sans-serif);--f-mono:var(--font-jetbrains,'JetBrains Mono',monospace);
 }
@@ -193,7 +193,7 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-off
 .h-brand-item:hover{color:rgba(240,240,235,.6)}
 .h-brand-item.sync:hover{color:var(--accent)}
 .h-brand-item.media:hover{color:var(--red)}
-.h-brand-item.viral:hover{color:var(--pink)}
+.h-brand-item.viral:hover{color:var(--purple)}
 .h-brand-sep{font-family:var(--f-mono);font-size:10px;color:rgba(240,240,235,.1);align-self:center}
 
 /* ── Company cards (home) ── */
@@ -203,22 +203,22 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-off
 .co-card::before{content:'';position:absolute;inset:0;opacity:0;pointer-events:none;transition:opacity .5s}
 .co-sync::before{background:radial-gradient(ellipse at top right,rgba(125,211,252,.07),transparent 65%)}
 .co-media::before{background:radial-gradient(ellipse at bottom left,rgba(255,48,48,.08),transparent 65%)}
-.co-viral::before{background:radial-gradient(ellipse at top left,rgba(249,168,212,.07),transparent 65%)}
+.co-viral::before{background:radial-gradient(ellipse at top left,rgba(167,139,250,.07),transparent 65%)}
 .co-card:hover::before{opacity:1}
 .co-num{font-family:var(--f-mono);font-size:10px;letter-spacing:.32em;color:rgba(240,240,235,.18);text-transform:uppercase}
 .co-media .co-num{color:rgba(255,48,48,.35)}
-.co-viral .co-num{color:rgba(249,168,212,.3)}
+.co-viral .co-num{color:rgba(167,139,250,.3)}
 .co-name{font-family:var(--f-disp);font-size:clamp(32px,4vw,52px);font-weight:700;letter-spacing:.01em;color:var(--paper);line-height:1}
 .co-media .co-name{color:var(--red)}
-.co-viral .co-name{color:var(--pink)}
+.co-viral .co-name{color:var(--purple)}
 .co-tag{font-family:var(--f-mono);font-size:9px;letter-spacing:.2em;color:rgba(240,240,235,.3);text-transform:uppercase;border:1px solid rgba(240,240,235,.1);padding:.28rem .7rem;display:inline-flex;width:fit-content;transition:color .3s,border-color .3s}
 .co-media .co-tag{color:rgba(255,48,48,.45);border-color:rgba(255,48,48,.2)}
-.co-viral .co-tag{color:rgba(249,168,212,.5);border-color:rgba(249,168,212,.2)}
+.co-viral .co-tag{color:rgba(167,139,250,.5);border-color:rgba(167,139,250,.2)}
 .co-desc{font-size:14px;font-weight:300;color:rgba(240,240,235,.42);line-height:1.72;flex:1}
 .co-link{font-family:var(--f-mono);font-size:10px;letter-spacing:.2em;color:rgba(240,240,235,.28);text-transform:uppercase;display:flex;align-items:center;gap:10px;transition:color .3s;margin-top:auto}
 .co-sync .co-link:hover{color:var(--accent)}
 .co-media .co-link:hover{color:var(--red)}
-.co-viral .co-link:hover{color:var(--pink)}
+.co-viral .co-link:hover{color:var(--purple)}
 .co-link svg{transition:transform .3s}
 .co-card:hover .co-link svg{transform:translate(3px,-3px)}
 
@@ -241,22 +241,22 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-off
 .emp-num{font-family:var(--f-mono);font-size:10px;letter-spacing:.38em;color:rgba(240,240,235,.2);text-transform:uppercase}
 .emp-sync .emp-num{color:rgba(125,211,252,.35)}
 .emp-media .emp-num{color:rgba(255,48,48,.35)}
-.emp-viral .emp-num{color:rgba(249,168,212,.3)}
+.emp-viral .emp-num{color:rgba(167,139,250,.3)}
 .emp-name{font-family:var(--f-disp);font-size:clamp(56px,8vw,100px);letter-spacing:.02em;line-height:.88;color:var(--paper)}
 .emp-media .emp-name{color:var(--red)}
-.emp-viral .emp-name{color:var(--pink)}
+.emp-viral .emp-name{color:var(--purple)}
 .emp-tag-row{display:flex;flex-wrap:wrap;gap:8px}
 .emp-tag{font-family:var(--f-mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;padding:.3rem .72rem;border:1px solid var(--border-hi);color:rgba(240,240,235,.38)}
 .emp-sync .emp-tag{border-color:rgba(125,211,252,.25);color:rgba(125,211,252,.5)}
 .emp-media .emp-tag{border-color:rgba(255,48,48,.25);color:rgba(255,48,48,.5)}
-.emp-viral .emp-tag{border-color:rgba(249,168,212,.25);color:rgba(249,168,212,.5)}
+.emp-viral .emp-tag{border-color:rgba(167,139,250,.25);color:rgba(167,139,250,.5)}
 .emp-desc{font-size:15px;font-weight:300;color:rgba(240,240,235,.55);line-height:1.78}
 .emp-feats{display:flex;flex-direction:column;gap:14px}
 .emp-feat{display:flex;align-items:flex-start;gap:14px;font-size:13px;font-weight:400;color:rgba(240,240,235,.45);line-height:1.55}
 .emp-feat::before{content:'—';flex-shrink:0;margin-top:1px}
 .emp-sync .emp-feat::before{color:rgba(125,211,252,.35)}
 .emp-media .emp-feat::before{color:rgba(255,48,48,.35)}
-.emp-viral .emp-feat::before{color:rgba(249,168,212,.3)}
+.emp-viral .emp-feat::before{color:rgba(167,139,250,.3)}
 .emp-cta{margin-top:8px}
 
 /* ── Contact page ── */
@@ -337,7 +337,7 @@ footer{padding:72px 44px 36px;border-top:1px solid var(--line);background:rgba(5
 .ci-b{font-family:var(--f-disp);font-size:clamp(28px,4.2vw,56px);letter-spacing:.08em;color:rgba(240,240,235,.22);transition:color .4s,text-shadow .4s}
 .ci-b.active{color:var(--accent);text-shadow:0 0 28px rgba(125,211,252,.7),0 0 70px rgba(125,211,252,.3)}
 .ci-b.active.red{color:var(--red);text-shadow:0 0 28px rgba(255,48,48,.7),0 0 70px rgba(255,48,48,.3)}
-.ci-b.active.pink{color:var(--pink);text-shadow:0 0 28px rgba(249,168,212,.7),0 0 70px rgba(249,168,212,.3)}
+.ci-b.active.purple{color:var(--purple);text-shadow:0 0 28px rgba(167,139,250,.7),0 0 70px rgba(167,139,250,.3)}
 .ci-dot{font-family:var(--f-mono);font-size:14px;color:rgba(240,240,235,.12);align-self:center}
 .ci-now{margin-top:52px;display:flex;flex-direction:column;align-items:center;gap:10px;opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
 .ci-now.on{opacity:1;transform:translateY(0)}

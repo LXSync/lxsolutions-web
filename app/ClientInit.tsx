@@ -46,7 +46,7 @@ export default function ClientInit() {
       }
       const r1 = mkRing(6, 100, 0x7DD3FC, 0.28, 0.5, 0.2)
       const r2 = mkRing(9, 100, 0xf0f0eb, 0.1, -0.3, 0.4)
-      const r3 = mkRing(13, 120, 0xF9A8D4, 0.08, 0.25, -0.3)
+      const r3 = mkRing(13, 120, 0xA78BFA, 0.08, 0.25, -0.3)
       ringGroup.add(r1, r2, r3)
       let mx = 0, my = 0
       addListener(document, 'mousemove', (e: Event) => { const ev = e as MouseEvent; mx = (ev.clientX / W - 0.5) * 2; my = (ev.clientY / H - 0.5) * 2 })
