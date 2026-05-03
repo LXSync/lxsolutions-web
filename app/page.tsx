@@ -1,5 +1,6 @@
 import ClientInit from './ClientInit'
 import CalendlyWidget from './components/CalendlyWidget'
+import VideoPlayer from './components/VideoPlayer'
 
 export default function Home() {
   return (
@@ -194,15 +195,7 @@ export default function Home() {
 
         {/* Video */}
         <section style={{ paddingBottom: '80px', width: '100%' }}>
-          <div style={{ position: 'relative', width: '100%', aspectRatio: '16/9' }}>
-            <iframe
-              src="https://www.youtube.com/embed/BxShTQvAbCs?autoplay=1&mute=1&loop=1&playlist=BxShTQvAbCs&controls=1&modestbranding=1&rel=0"
-              title="LXSolutions presentación"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', border: 'none', display: 'block' }}
-            />
-          </div>
+          <VideoPlayer />
         </section>
 
         {/* CTA */}
