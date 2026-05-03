@@ -193,18 +193,15 @@ export default function Home() {
         </section>
 
         {/* Video */}
-        <section className="section" style={{ paddingTop: 0, paddingBottom: '80px' }}>
-          <div className="container" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '24px' }}>
-            <div className="sec-label" style={{ justifyContent: 'center' }}>// Presentación</div>
-            <div style={{ position: 'relative', width: '300px', maxWidth: '100%', aspectRatio: '9/16', borderRadius: '12px', overflow: 'hidden', border: '1px solid var(--line)' }}>
-              <iframe
-                src="https://www.youtube.com/embed/BxShTQvAbCs"
-                title="LXSolutions presentación"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', border: 'none' }}
-              />
-            </div>
+        <section style={{ paddingBottom: '80px', width: '100%' }}>
+          <div style={{ position: 'relative', width: '100%', aspectRatio: '16/9' }}>
+            <iframe
+              src="https://www.youtube.com/embed/BxShTQvAbCs?autoplay=1&mute=1&loop=1&playlist=BxShTQvAbCs&controls=1&modestbranding=1&rel=0"
+              title="LXSolutions presentación"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', border: 'none', display: 'block' }}
+            />
           </div>
         </section>
 
