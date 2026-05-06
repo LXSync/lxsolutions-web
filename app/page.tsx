@@ -261,6 +261,15 @@ export default function Home() {
       {/* PAGE: EMPRESAS                          */}
       {/* ═══════════════════════════════════════ */}
       <div id="page-empresas" className="page">
+        {/* ── Intro screen ── */}
+        <div className="emp-intro">
+          <div>
+            <div className="emp-intro-label">LXSOLUTIONS · GROUP · 2026</div>
+            <h2 className="emp-intro-title">La Presentación<br /><em>Va En Automático</em></h2>
+            <div className="emp-intro-arrow">↓</div>
+          </div>
+        </div>
+
         {/* LXSync */}
         <div className="emp-section emp-sync">
           <div className="container">
@@ -366,6 +375,15 @@ export default function Home() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* ── Question screen ── */}
+        <div className="emp-question">
+          <div>
+            <div className="emp-question-pre">La pregunta que te hacemos</div>
+            <h2 className="emp-question-title">¿Por qué no escalamos<br /><em>inteligentemente</em><br />tu empresa?</h2>
+            <div className="emp-question-brand">LXSOLUTIONS GROUP</div>
           </div>
         </div>
 

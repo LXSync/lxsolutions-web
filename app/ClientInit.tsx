@@ -182,31 +182,45 @@ export default function ClientInit() {
       const stopEmp = () => {
         while (empTimers.length) clearTimeout(empTimers.pop()!)
         empAutoActive = false
-        document.getElementById('page-empresas')?.classList.remove('emp-done')
+        const p = document.getElementById('page-empresas')
+        p?.classList.remove('emp-done', 'emp-collapsed')
       }
 
       const startEmpExperience = () => {
         stopEmp()
+        const page = document.getElementById('page-empresas')
+        const intro = document.querySelector<HTMLElement>('#page-empresas .emp-intro')
         const secs = Array.from(document.querySelectorAll<HTMLElement>('#page-empresas .emp-section'))
+        const question = document.querySelector<HTMLElement>('#page-empresas .emp-question')
         const finale = document.querySelector<HTMLElement>('#page-empresas .emp-finale')
-        ;[...secs, finale].forEach(el => el?.classList.remove('emp-vis'))
+        ;[intro, ...secs, question, finale].forEach(el => el?.classList.remove('emp-vis'))
+        page?.classList.remove('emp-done', 'emp-collapsed')
         empAutoActive = true
         const at = (ms: number, fn: () => void) => { const id = setTimeout(fn, ms); empTimers.push(id) }
-        // LXSYNC — 10s
-        at(300, () => secs[0]?.classList.add('emp-vis'))
-        // LXMEDIA — 10s
-        at(10300, () => { if (!empAutoActive) return; secs[1]?.scrollIntoView({ behavior: 'smooth', block: 'start' }); at(650, () => secs[1]?.classList.add('emp-vis')) })
-        // LXVIRAL — 10s
-        at(20300, () => { if (!empAutoActive) return; secs[2]?.scrollIntoView({ behavior: 'smooth', block: 'start' }); at(650, () => secs[2]?.classList.add('emp-vis')) })
-        // Finale — all brands united; hide individual sections after
-        at(30300, () => {
+        // Intro screen
+        at(200, () => intro?.classList.add('emp-vis'))
+        // LXSYNC — scroll after 2.5s on intro
+        at(2500, () => { if (!empAutoActive) return; secs[0]?.scrollIntoView({ behavior: 'smooth', block: 'start' }); at(650, () => secs[0]?.classList.add('emp-vis')) })
+        // LXMEDIA — 10s on LXSYNC
+        at(13150, () => { if (!empAutoActive) return; secs[1]?.scrollIntoView({ behavior: 'smooth', block: 'start' }); at(650, () => secs[1]?.classList.add('emp-vis')) })
+        // LXVIRAL — 10s on LXMEDIA
+        at(23800, () => { if (!empAutoActive) return; secs[2]?.scrollIntoView({ behavior: 'smooth', block: 'start' }); at(650, () => secs[2]?.classList.add('emp-vis')) })
+        // Question — 10s on LXVIRAL
+        at(34450, () => { if (!empAutoActive) return; question?.scrollIntoView({ behavior: 'smooth', block: 'start' }); at(700, () => question?.classList.add('emp-vis')) })
+        // Finale — 10s on question
+        at(45150, () => {
           if (!empAutoActive) return
           finale?.scrollIntoView({ behavior: 'smooth', block: 'start' })
           at(700, () => {
             finale?.classList.add('emp-vis')
             at(900, () => {
-              document.getElementById('page-empresas')?.classList.add('emp-done')
+              page?.classList.add('emp-done')
               empAutoActive = false
+              // After fade-out completes, collapse sections and scroll to top
+              setTimeout(() => {
+                page?.classList.add('emp-collapsed')
+                window.scrollTo({ top: 0 })
+              }, 1400)
             })
           })
         })
@@ -337,7 +351,7 @@ export default function ClientInit() {
       const ioEmp = new IntersectionObserver(entries => {
         entries.forEach(e => { if (e.isIntersecting) (e.target as HTMLElement).classList.add('emp-vis') })
       }, { threshold: 0.15 })
-      document.querySelectorAll('.emp-section, .emp-finale').forEach(s => ioEmp.observe(s))
+      document.querySelectorAll('.emp-intro, .emp-section, .emp-question, .emp-finale').forEach(s => ioEmp.observe(s))
 
       // Cancel auto-scroll on manual interaction
       addListener(window, 'wheel', () => { if (empAutoActive) stopEmp() }, { passive: true })
