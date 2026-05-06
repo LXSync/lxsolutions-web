@@ -374,31 +374,67 @@ export default function Home() {
 
         {/* ── Finale: all brands united ── */}
         <div className="emp-finale">
-          <div className="emp-finale-inner">
-            <div className="emp-finale-top">
-              <div className="emp-fb emp-fb-sync">
-                <div className="emp-fb-num">01</div>
-                <div className="emp-fb-name">LXSYNC</div>
-                <div className="emp-fb-tag">Automatización e IA</div>
-              </div>
-              <div className="emp-fb-conn"><div className="emp-fb-conn-line" /><div className="emp-fb-conn-dot" /></div>
-              <div className="emp-fb emp-fb-media">
-                <div className="emp-fb-num">02</div>
-                <div className="emp-fb-name">LXMEDIA</div>
-                <div className="emp-fb-tag">YouTube &amp; Contenido</div>
-              </div>
-              <div className="emp-fb-conn"><div className="emp-fb-conn-line" /><div className="emp-fb-conn-dot" /></div>
-              <div className="emp-fb emp-fb-viral">
-                <div className="emp-fb-num">03</div>
-                <div className="emp-fb-name">LXVIRAL</div>
-                <div className="emp-fb-tag">Redes Sociales</div>
-              </div>
-            </div>
+          <div className="emp-finale-hd">
             <div className="emp-finale-umb">LXSOLUTIONS · GROUP</div>
             <h2 className="emp-finale-title">Un solo grupo.<br /><em>Tres divisiones.</em></h2>
-            <div className="emp-finale-cta">
-              <a data-nav="contacto" className="btn btn-p" style={{ cursor: 'none' }}>Agendar llamada →</a>
+          </div>
+          <div className="emp-finale-grid">
+            <div className="emp-fb emp-fb-sync">
+              <div className="emp-fb-num">01</div>
+              <div className="emp-fb-name">LXSYNC</div>
+              <div className="emp-fb-tags">
+                <span className="emp-fb-tag">Automatización</span>
+                <span className="emp-fb-tag">Agentes IA</span>
+                <span className="emp-fb-tag">B2B</span>
+              </div>
+              <p className="emp-fb-desc">Automatizamos los procesos que frenan tu negocio. Integración de sistemas, flujos con IA y pipelines a medida.</p>
+              <ul className="emp-fb-feats">
+                <li>Diagnóstico operativo sin coste</li>
+                <li>Agentes IA que operan 24/7</li>
+                <li>Flujos con n8n, Make y GPT-4o</li>
+                <li>Implementación en 2–4 semanas</li>
+              </ul>
+              <a className="emp-fb-link" href="https://lxsync-web.vercel.app" target="_blank" rel="noopener noreferrer">Visitar LXSYNC →</a>
             </div>
+            <div className="emp-fb-sep"><div className="emp-fb-sep-line" /></div>
+            <div className="emp-fb emp-fb-media">
+              <div className="emp-fb-num">02</div>
+              <div className="emp-fb-name">LXMEDIA</div>
+              <div className="emp-fb-tags">
+                <span className="emp-fb-tag">YouTube</span>
+                <span className="emp-fb-tag">Contenido</span>
+                <span className="emp-fb-tag">Producción</span>
+              </div>
+              <p className="emp-fb-desc">Creamos y gestionamos tu canal de YouTube desde cero. Guion, grabación, edición y publicación — sin que dediques tiempo.</p>
+              <ul className="emp-fb-feats">
+                <li>Producción completa de video</li>
+                <li>SEO en YouTube y thumbnails</li>
+                <li>Shorts y clips para redes</li>
+                <li>Estrategia de crecimiento de canal</li>
+              </ul>
+              <a className="emp-fb-link" data-nav="contacto" style={{ cursor: 'none' }}>Hablar con LXMEDIA →</a>
+            </div>
+            <div className="emp-fb-sep"><div className="emp-fb-sep-line" /></div>
+            <div className="emp-fb emp-fb-viral">
+              <div className="emp-fb-num">03</div>
+              <div className="emp-fb-name">LXVIRAL</div>
+              <div className="emp-fb-tags">
+                <span className="emp-fb-tag">Instagram</span>
+                <span className="emp-fb-tag">TikTok</span>
+                <span className="emp-fb-tag">Viral</span>
+              </div>
+              <p className="emp-fb-desc">Hacemos viral tu empresa en Instagram y TikTok. Creamos el contenido, publicamos y optimizamos para máximo alcance.</p>
+              <ul className="emp-fb-feats">
+                <li>Gestión completa de redes</li>
+                <li>Reels, carruseles y videos cortos</li>
+                <li>Estrategia viral y timing</li>
+                <li>Crecimiento sin inversión en ads</li>
+              </ul>
+              <a className="emp-fb-link" data-nav="contacto" style={{ cursor: 'none' }}>Hablar con LXVIRAL →</a>
+            </div>
+          </div>
+          <div className="emp-finale-cta">
+            <a data-nav="contacto" className="btn btn-p" style={{ cursor: 'none' }}>Agendar llamada →</a>
           </div>
         </div>
 

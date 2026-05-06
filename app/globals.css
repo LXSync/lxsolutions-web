@@ -239,8 +239,8 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-off
 .emp-section{min-height:100vh;display:flex;align-items:stretch;border-bottom:1px solid var(--line);overflow:hidden;position:relative}
 .emp-section:last-child{border-bottom:none}
 .emp-card{display:grid;grid-template-columns:1fr 1.1fr;gap:0;width:100%}
-.emp-left{padding:80px 56px;border-right:1px solid var(--line);display:flex;flex-direction:column;justify-content:center;gap:24px}
-.emp-right{padding:80px 56px;background:rgba(10,10,10,.5);display:flex;flex-direction:column;justify-content:center;gap:20px}
+.emp-left{padding:80px 56px;border-right:1px solid var(--line);display:flex;flex-direction:column;justify-content:center;gap:24px;min-height:100vh}
+.emp-right{padding:80px 56px;background:rgba(10,10,10,.5);display:flex;flex-direction:column;justify-content:center;gap:20px;min-height:100vh}
 
 /* Initial hidden state for brand animations */
 .emp-num{font-family:var(--f-mono);font-size:10px;letter-spacing:.38em;color:rgba(240,240,235,.2);text-transform:uppercase;opacity:0;transform:translateY(-16px);transition:opacity .5s cubic-bezier(.16,1,.3,1),transform .5s cubic-bezier(.16,1,.3,1)}
@@ -277,30 +277,42 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-off
 .emp-section.emp-vis .emp-feat{opacity:1;transform:none}
 
 /* ── Empresas finale ── */
-.emp-finale{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;z-index:2;border-top:1px solid var(--line)}
-.emp-finale-inner{padding:96px 44px 80px;width:100%;max-width:1100px;margin:0 auto;display:flex;flex-direction:column;align-items:center}
-.emp-finale-top{display:flex;align-items:center;justify-content:center;width:100%;margin-bottom:52px}
-.emp-fb{display:flex;flex-direction:column;align-items:center;gap:12px;padding:0 40px;opacity:0;transform:translateY(36px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
-.emp-finale.emp-vis .emp-fb:nth-child(1){opacity:1;transform:none;transition-delay:.0s}
-.emp-finale.emp-vis .emp-fb:nth-child(3){opacity:1;transform:none;transition-delay:.18s}
-.emp-finale.emp-vis .emp-fb:nth-child(5){opacity:1;transform:none;transition-delay:.36s}
+.emp-finale{min-height:100vh;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:2;border-top:1px solid var(--line)}
+.emp-finale-hd{text-align:center;padding:80px 44px 52px;opacity:0;transform:translateY(22px);transition:opacity .85s cubic-bezier(.16,1,.3,1) .2s,transform .85s cubic-bezier(.16,1,.3,1) .2s}
+.emp-finale.emp-vis .emp-finale-hd{opacity:1;transform:none}
+.emp-finale-umb{font-family:var(--f-mono);font-size:10px;letter-spacing:.5em;color:rgba(240,240,235,.3);text-transform:uppercase;margin-bottom:14px}
+.emp-finale-title{font-family:var(--f-disp);font-size:clamp(48px,7.5vw,100px);letter-spacing:.01em;color:var(--paper);line-height:.88}
+.emp-finale-title em{background:linear-gradient(125deg,#7DD3FC 0%,rgba(240,240,235,.9) 60%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-style:normal}
+.emp-finale-grid{display:grid;grid-template-columns:1fr 1px 1fr 1px 1fr;width:100%;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.emp-fb-sep{display:flex;align-items:stretch;justify-content:center}
+.emp-fb-sep-line{width:1px;background:var(--line);clip-path:polygon(0 50%,100% 50%,100% 50%,0 50%);transition:clip-path 1.1s cubic-bezier(.16,1,.3,1) .5s}
+.emp-finale.emp-vis .emp-fb-sep-line{clip-path:polygon(0 0,100% 0,100% 100%,0 100%)}
+.emp-fb{padding:56px 52px;display:flex;flex-direction:column;gap:18px;opacity:0;transform:translateY(36px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
+.emp-finale.emp-vis .emp-fb:nth-child(1){opacity:1;transform:none;transition-delay:.1s}
+.emp-finale.emp-vis .emp-fb:nth-child(3){opacity:1;transform:none;transition-delay:.26s}
+.emp-finale.emp-vis .emp-fb:nth-child(5){opacity:1;transform:none;transition-delay:.42s}
 .emp-fb-num{font-family:var(--f-mono);font-size:9px;letter-spacing:.38em;color:rgba(240,240,235,.25);text-transform:uppercase}
-.emp-fb-name{font-family:var(--f-disp);font-size:clamp(38px,5.5vw,76px);letter-spacing:.03em;line-height:1}
+.emp-fb-name{font-family:var(--f-disp);font-size:clamp(38px,5.5vw,72px);letter-spacing:.02em;line-height:.9}
 .emp-fb-sync .emp-fb-name{color:var(--accent);text-shadow:0 0 50px rgba(125,211,252,.35)}
 .emp-fb-media .emp-fb-name{color:var(--red);text-shadow:0 0 50px rgba(255,48,48,.35)}
 .emp-fb-viral .emp-fb-name{color:var(--purple);text-shadow:0 0 50px rgba(167,139,250,.35)}
-.emp-fb-tag{font-family:var(--f-mono);font-size:9px;letter-spacing:.2em;color:rgba(240,240,235,.3);text-transform:uppercase;line-height:1.5}
-.emp-fb-conn{flex:1;max-width:100px;display:flex;align-items:center;justify-content:center;position:relative;min-width:40px}
-.emp-fb-conn-line{height:1px;width:0;background:linear-gradient(to right,rgba(240,240,235,.1),rgba(240,240,235,.4),rgba(240,240,235,.1));transition:width .9s cubic-bezier(.16,1,.3,1) .48s}
-.emp-finale.emp-vis .emp-fb-conn-line{width:100%}
-.emp-fb-conn-dot{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:5px;height:5px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px rgba(125,211,252,.7);opacity:0;transition:opacity .4s .95s}
-.emp-finale.emp-vis .emp-fb-conn-dot{opacity:1}
-.emp-finale-umb{font-family:var(--f-mono);font-size:10px;letter-spacing:.5em;color:rgba(240,240,235,.3);text-transform:uppercase;opacity:0;transform:translateY(10px);transition:opacity .5s cubic-bezier(.16,1,.3,1) .6s,transform .5s cubic-bezier(.16,1,.3,1) .6s;margin-bottom:14px}
-.emp-finale.emp-vis .emp-finale-umb{opacity:1;transform:none}
-.emp-finale-title{font-family:var(--f-disp);font-size:clamp(48px,7.5vw,100px);letter-spacing:.01em;color:var(--paper);line-height:.88;opacity:0;transform:translateY(22px);transition:opacity .85s cubic-bezier(.16,1,.3,1) .7s,transform .85s cubic-bezier(.16,1,.3,1) .7s;margin-bottom:40px}
-.emp-finale-title em{background:linear-gradient(125deg,#7DD3FC 0%,rgba(240,240,235,.9) 60%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-style:normal}
-.emp-finale.emp-vis .emp-finale-title{opacity:1;transform:none}
-.emp-finale-cta{opacity:0;transform:translateY(12px);transition:opacity .5s cubic-bezier(.16,1,.3,1) 1.1s,transform .5s cubic-bezier(.16,1,.3,1) 1.1s}
+.emp-fb-tags{display:flex;flex-wrap:wrap;gap:6px}
+.emp-fb-tag{font-family:var(--f-mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;padding:.28rem .65rem;border:1px solid rgba(240,240,235,.12);color:rgba(240,240,235,.35)}
+.emp-fb-sync .emp-fb-tag{border-color:rgba(125,211,252,.2);color:rgba(125,211,252,.45)}
+.emp-fb-media .emp-fb-tag{border-color:rgba(255,48,48,.2);color:rgba(255,48,48,.45)}
+.emp-fb-viral .emp-fb-tag{border-color:rgba(167,139,250,.2);color:rgba(167,139,250,.45)}
+.emp-fb-desc{font-size:14px;font-weight:300;color:rgba(240,240,235,.5);line-height:1.72;margin-top:4px}
+.emp-fb-feats{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px;flex:1}
+.emp-fb-feats li{font-size:13px;color:rgba(240,240,235,.4);display:flex;align-items:flex-start;gap:10px;line-height:1.5}
+.emp-fb-feats li::before{content:'—';flex-shrink:0}
+.emp-fb-sync .emp-fb-feats li::before{color:rgba(125,211,252,.35)}
+.emp-fb-media .emp-fb-feats li::before{color:rgba(255,48,48,.35)}
+.emp-fb-viral .emp-fb-feats li::before{color:rgba(167,139,250,.3)}
+.emp-fb-link{font-family:var(--f-mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:rgba(240,240,235,.35);transition:color .25s;cursor:none;margin-top:8px;display:inline-block}
+.emp-fb-sync .emp-fb-link:hover{color:var(--accent)}
+.emp-fb-media .emp-fb-link:hover{color:var(--red)}
+.emp-fb-viral .emp-fb-link:hover{color:var(--purple)}
+.emp-finale-cta{text-align:center;padding:60px 44px;opacity:0;transform:translateY(12px);transition:opacity .5s cubic-bezier(.16,1,.3,1) 1.1s,transform .5s cubic-bezier(.16,1,.3,1) 1.1s}
 .emp-finale.emp-vis .emp-finale-cta{opacity:1;transform:none}
 
 /* ── Contact v2 ── */
