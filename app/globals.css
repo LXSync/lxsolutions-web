@@ -119,7 +119,7 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-off
 .nmb-label{font-family:var(--f-mono);font-size:10px;letter-spacing:.4em;color:rgba(240,240,235,.85);text-transform:uppercase}
 
 /* ── Nav overlay ── */
-#nav-overlay{position:fixed;inset:0;z-index:9000;background:rgba(4,4,4,.78);backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px);opacity:0;pointer-events:none;transition:opacity .55s cubic-bezier(.16,1,.3,1);display:flex;align-items:center;overflow:hidden}
+#nav-overlay{position:fixed;inset:0;z-index:9000;background:rgba(4,4,4,.82);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);opacity:0;pointer-events:none;transition:opacity .55s cubic-bezier(.16,1,.3,1);display:flex;align-items:center;overflow:hidden}
 #nav-overlay.open{opacity:1;pointer-events:all}
 #nvo-canvas{display:none}
 .nvo-scanlines{position:absolute;inset:0;pointer-events:none;opacity:.04;background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(255,255,255,.08) 3px,rgba(255,255,255,.08) 6px)}
