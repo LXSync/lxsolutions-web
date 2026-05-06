@@ -11,10 +11,13 @@ export default function ClientInit() {
       listeners.push({ el, type, fn, opts })
     }
 
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    const skipHeavyFx = reducedMotion
+
     /* ══ THREE.JS BG ══ */
     const canvas = document.getElementById('three-canvas') as HTMLCanvasElement
     let threeRenderer: THREE.WebGLRenderer | null = null
-    if (canvas) {
+    if (canvas && !skipHeavyFx) {
       let W = innerWidth, H = innerHeight
       const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true })
       threeRenderer = renderer
@@ -35,23 +38,45 @@ export default function ClientInit() {
       }
       const stGeo = new THREE.BufferGeometry()
       stGeo.setAttribute('position', new THREE.BufferAttribute(stPos, 3))
-      const stMat = new THREE.PointsMaterial({ color: 0xf0f0eb, size: 0.1, transparent: true, opacity: 0.55, sizeAttenuation: true, depthWrite: false })
+      const stMat = new THREE.PointsMaterial({ color: 0xf0f0eb, size: 0.13, transparent: true, opacity: 0.65, sizeAttenuation: true, depthWrite: false })
       scene.add(new THREE.Points(stGeo, stMat))
-      const ringGroup = new THREE.Group(); scene.add(ringGroup)
-      function mkRing(r: number, seg: number, col: number, op: number, tx: number, tz: number) {
-        const pts: THREE.Vector3[] = []
-        for (let j = 0; j <= seg; j++) { const a = (j / seg) * Math.PI * 2; pts.push(new THREE.Vector3(r * Math.cos(a), 0, r * Math.sin(a))) }
-        const l = new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts), new THREE.LineBasicMaterial({ color: col, transparent: true, opacity: op }))
-        l.rotation.x = tx; l.rotation.z = tz; return l
-      }
-      const r1 = mkRing(6, 100, 0x7DD3FC, 0.28, 0.5, 0.2)
-      const r2 = mkRing(9, 100, 0xf0f0eb, 0.1, -0.3, 0.4)
-      const r3 = mkRing(13, 120, 0xA78BFA, 0.08, 0.25, -0.3)
-      ringGroup.add(r1, r2, r3)
+
+      /* ── Node graph ── */
+      interface GNode { x: number; y: number; z: number; vx: number; vy: number; vz: number }
+      interface GPulse { from: number; to: number; t: number; speed: number; active: boolean }
+      const NODE_COUNT = 40, DIST = 7.2, BX = 15, BY = 9, BZ = 6, MAX_EDGES = 160, MAX_PULSES = 6
+
+      const gnodes: GNode[] = []
+      for (let i = 0; i < NODE_COUNT; i++) gnodes.push({ x: (Math.random()-.5)*BX*2, y: (Math.random()-.5)*BY*2, z: (Math.random()-.5)*BZ*2, vx: (Math.random()-.5)*0.007, vy: (Math.random()-.5)*0.007, vz: (Math.random()-.5)*0.003 })
+
+      const gnodePos = new Float32Array(NODE_COUNT * 3)
+      const gnodeGeo = new THREE.BufferGeometry()
+      gnodeGeo.setAttribute('position', new THREE.BufferAttribute(gnodePos, 3))
+      const gnodeMat = new THREE.PointsMaterial({ color: 0x7DD3FC, size: 0.22, transparent: true, opacity: 0.9, sizeAttenuation: true, depthWrite: false })
+      scene.add(new THREE.Points(gnodeGeo, gnodeMat))
+
+      const edgePos = new Float32Array(MAX_EDGES * 6)
+      const edgeGeo = new THREE.BufferGeometry()
+      edgeGeo.setAttribute('position', new THREE.BufferAttribute(edgePos, 3))
+      edgeGeo.setDrawRange(0, 0)
+      const edgeMat = new THREE.LineBasicMaterial({ color: 0x7DD3FC, transparent: true, opacity: 0.14 })
+      scene.add(new THREE.LineSegments(edgeGeo, edgeMat))
+
+      const pulsePos = new Float32Array(MAX_PULSES * 3)
+      const pulseGeo = new THREE.BufferGeometry()
+      pulseGeo.setAttribute('position', new THREE.BufferAttribute(pulsePos, 3))
+      const pulseMat = new THREE.PointsMaterial({ color: 0xffffff, size: 0.38, transparent: true, opacity: 0.92, sizeAttenuation: true, depthWrite: false })
+      scene.add(new THREE.Points(pulseGeo, pulseMat))
+
+      const gpulses: GPulse[] = Array.from({ length: MAX_PULSES }, () => ({ from: 0, to: 0, t: 0, speed: 0, active: false }))
+      const activeEdges: [number, number][] = []
+      let pulseTimer = 0
+
       let mx = 0, my = 0
       addListener(document, 'mousemove', (e: Event) => { const ev = e as MouseEvent; mx = (ev.clientX / W - 0.5) * 2; my = (ev.clientY / H - 0.5) * 2 })
+
       const t0 = performance.now()
-      ;(function tick() {
+      function tick() {
         const t = (performance.now() - t0) / 1000
         camera.position.x += (mx * 0.8 - camera.position.x) * 0.025
         camera.position.y += (-my * 0.5 - camera.position.y) * 0.025
@@ -63,11 +88,71 @@ export default function ClientInit() {
           pa[i * 3 + 1] = b.y + Math.cos(t * 0.25 * b.sp + i * 0.4) * 0.15
         }
         stGeo.attributes.position.needsUpdate = true
-        r1.rotation.z += 0.0014; r2.rotation.z -= 0.001; r3.rotation.z += 0.0007
-        ringGroup.rotation.y = Math.sin(t * 0.08) * 0.12
+        for (const n of gnodes) {
+          n.x += n.vx; n.y += n.vy; n.z += n.vz
+          if (Math.abs(n.x) > BX) n.vx *= -1
+          if (Math.abs(n.y) > BY) n.vy *= -1
+          if (Math.abs(n.z) > BZ) n.vz *= -1
+        }
+        for (let i = 0; i < NODE_COUNT; i++) { gnodePos[i*3]=gnodes[i].x; gnodePos[i*3+1]=gnodes[i].y; gnodePos[i*3+2]=gnodes[i].z }
+        gnodeGeo.attributes.position.needsUpdate = true
+        activeEdges.length = 0; let ei = 0
+        for (let i = 0; i < NODE_COUNT && ei < MAX_EDGES; i++) {
+          for (let j = i+1; j < NODE_COUNT && ei < MAX_EDGES; j++) {
+            const dx=gnodes[i].x-gnodes[j].x, dy=gnodes[i].y-gnodes[j].y, dz=gnodes[i].z-gnodes[j].z
+            if (dx*dx+dy*dy+dz*dz < DIST*DIST) {
+              edgePos[ei*6]=gnodes[i].x; edgePos[ei*6+1]=gnodes[i].y; edgePos[ei*6+2]=gnodes[i].z
+              edgePos[ei*6+3]=gnodes[j].x; edgePos[ei*6+4]=gnodes[j].y; edgePos[ei*6+5]=gnodes[j].z
+              activeEdges.push([i,j]); ei++
+            }
+          }
+        }
+        edgeGeo.attributes.position.needsUpdate = true; edgeGeo.setDrawRange(0, ei*2)
+        pulseTimer++
+        if (pulseTimer > 50 && activeEdges.length > 0) {
+          const free = gpulses.findIndex(p => !p.active)
+          if (free !== -1) {
+            const e = activeEdges[Math.floor(Math.random()*activeEdges.length)]
+            gpulses[free] = { from: e[0], to: e[1], t: 0, speed: 0.007+Math.random()*0.007, active: true }
+            pulseTimer = 0
+          }
+        }
+        for (let i = 0; i < MAX_PULSES; i++) {
+          const p = gpulses[i]
+          if (!p.active) { pulsePos[i*3+2] = -9999; continue }
+          p.t += p.speed
+          if (p.t >= 1) { p.active = false; pulsePos[i*3+2] = -9999; continue }
+          const fn=gnodes[p.from], tn=gnodes[p.to]
+          pulsePos[i*3]=fn.x+(tn.x-fn.x)*p.t; pulsePos[i*3+1]=fn.y+(tn.y-fn.y)*p.t; pulsePos[i*3+2]=fn.z+(tn.z-fn.z)*p.t
+        }
+        pulseGeo.attributes.position.needsUpdate = true
         renderer.render(scene, camera)
         requestAnimationFrame(tick)
-      })()
+      }
+      tick()
+    }
+
+    /* ══ HERO PARTICLES ══ */
+    const hc = document.getElementById('h-particles') as HTMLCanvasElement
+    if (hc && !skipHeavyFx) {
+      const ctx = hc.getContext('2d')!
+      let W2: number, H2: number
+      const pts: { x: number; y: number; vx: number; vy: number; r: number; o: number }[] = []
+      const resizeHero = () => { W2 = hc.width = hc.offsetWidth; H2 = hc.height = hc.offsetHeight }
+      resizeHero()
+      addListener(window, 'resize', resizeHero)
+      for (let i = 0; i < 60; i++) pts.push({ x: Math.random() * innerWidth, y: Math.random() * innerHeight, vx: (Math.random() - 0.5) * 0.25, vy: (Math.random() - 0.5) * 0.25, r: Math.random() * 1.2 + 0.2, o: Math.random() * 0.22 + 0.04 })
+      function drawHero() {
+        ctx.clearRect(0, 0, W2, H2)
+        for (const p of pts) {
+          p.x += p.vx; p.y += p.vy
+          if (p.x < 0) p.x = W2; if (p.x > W2) p.x = 0; if (p.y < 0) p.y = H2; if (p.y > H2) p.y = 0
+          ctx.globalAlpha = p.o; ctx.fillStyle = 'rgba(240,240,235,1)'
+          ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2); ctx.fill()
+        }
+        ctx.globalAlpha = 1; requestAnimationFrame(drawHero)
+      }
+      drawHero()
     }
 
     /* ══ SITE INIT ══ */
@@ -199,18 +284,6 @@ export default function ClientInit() {
       closeBtn.addEventListener('click', closeNav)
       addListener(document, 'keydown', (e: Event) => { if ((e as KeyboardEvent).key === 'Escape' && overlayOpen) closeNav() })
       overlay.querySelectorAll('[data-nav], a[href]').forEach(a => a.addEventListener('click', () => setTimeout(closeNav, 80)))
-
-      /* Nav overlay canvas */
-      const nvoCanvas = document.getElementById('nvo-canvas') as HTMLCanvasElement
-      if (nvoCanvas) {
-        const nctx = nvoCanvas.getContext('2d')!
-        let nW = 0, nH = 0
-        const nPts: { x: number; y: number; vx: number; vy: number; r: number; o: number }[] = []
-        const rsz = () => { nW = nvoCanvas.width = innerWidth; nH = nvoCanvas.height = innerHeight }
-        rsz(); addListener(window, 'resize', rsz)
-        for (let i = 0; i < 120; i++) nPts.push({ x: Math.random() * innerWidth, y: Math.random() * innerHeight, vx: (Math.random() - 0.5) * 0.18, vy: (Math.random() - 0.5) * 0.18, r: Math.random() * 0.9 + 0.1, o: Math.random() * 0.14 + 0.03 })
-        ;(function ndraw() { nctx.clearRect(0, 0, nW, nH); for (const p of nPts) { p.x += p.vx; p.y += p.vy; if (p.x < 0) p.x = nW; if (p.x > nW) p.x = 0; if (p.y < 0) p.y = nH; if (p.y > nH) p.y = 0; nctx.globalAlpha = p.o; nctx.fillStyle = 'rgba(125,211,252,1)'; nctx.beginPath(); nctx.arc(p.x, p.y, p.r, 0, Math.PI * 2); nctx.fill() } nctx.globalAlpha = 1; requestAnimationFrame(ndraw) })()
-      }
 
       /* Scroll reveal */
       const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target) } }), { threshold: 0.08 })

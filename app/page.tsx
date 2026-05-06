@@ -12,6 +12,7 @@ export default function Home() {
       <div id="bg-grid" aria-hidden="true" />
       <div id="bg-vignette" aria-hidden="true" />
       <div id="bg-noise" aria-hidden="true" />
+      <div id="bg-scan" aria-hidden="true" />
 
       {/* Scroll progress */}
       <div id="sp" aria-hidden="true" />
@@ -96,34 +97,40 @@ export default function Home() {
       </nav>
 
       {/* NAV OVERLAY */}
-      <div id="nav-overlay" role="dialog" aria-label="Menú de navegación" aria-hidden="true">
+      <div id="nav-overlay" role="dialog" aria-label="Menú de navegación" aria-hidden="true" aria-modal="true">
         <canvas id="nvo-canvas" aria-hidden="true" />
         <div className="nvo-scanlines" aria-hidden="true" />
         <div className="nvo-corner nvo-tl">LXSOLUTIONS · GRUPO</div>
         <div className="nvo-corner nvo-br">BCN · 2026</div>
-        <button id="nvo-close" aria-label="Cerrar menú">
+        <button className="nvo-close" id="nvo-close" aria-label="Cerrar menú">
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
             <path d="M1 1l12 12M13 1L1 13" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
           </svg>
-          <span className="nvc-label">Cerrar</span>
+          <span className="nvc-label">CERRAR</span>
         </button>
         <div className="nvo-inner">
           <div className="nvo-brand">
             <span className="nvo-dot" aria-hidden="true" />LXSOLUTIONS GROUP
           </div>
           <nav className="nvo-links" aria-label="Navegación overlay">
-            <a data-nav="home" className="nvo-link" role="button">
-              <span className="nvo-num">01</span><span className="nvo-text">Inicio</span><span className="nvo-arr">→</span>
+            <a data-nav="home" className="nvo-link">
+              <span className="nvo-num">01</span>
+              <span className="nvo-text">Inicio</span>
+              <span className="nvo-desc">El grupo</span>
             </a>
-            <a data-nav="empresas" className="nvo-link" role="button">
-              <span className="nvo-num">02</span><span className="nvo-text">Divisiones</span><span className="nvo-arr">→</span>
+            <a data-nav="empresas" className="nvo-link">
+              <span className="nvo-num">02</span>
+              <span className="nvo-text">Divisiones</span>
+              <span className="nvo-desc">Tres marcas</span>
             </a>
-            <a data-nav="contacto" className="nvo-link" role="button">
-              <span className="nvo-num">03</span><span className="nvo-text">Contacto</span><span className="nvo-arr">→</span>
+            <a data-nav="contacto" className="nvo-link">
+              <span className="nvo-num">03</span>
+              <span className="nvo-text">Contacto</span>
+              <span className="nvo-desc">Agendar llamada</span>
             </a>
           </nav>
           <div className="nvo-foot">
-            <a data-nav="contacto" className="nvo-cta" style={{ cursor: 'none' }}>
+            <a data-nav="contacto" className="nvo-cta">
               Agendar llamada →
             </a>
             <span className="nvo-contact">info@lxsync.com · Barcelona</span>
@@ -136,6 +143,7 @@ export default function Home() {
       {/* ═══════════════════════════════════════ */}
       <div id="page-home" className="page active">
         <section id="hero">
+          <canvas id="h-particles" aria-hidden="true" />
           <div className="h-eyebrow">
             <span className="ey-dot" aria-hidden="true" />
             LXSOLUTIONS · GRUPO EMPRESARIAL · BARCELONA
