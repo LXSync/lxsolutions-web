@@ -197,6 +197,8 @@ export default function ClientInit() {
         document.body.style.overflow = ''
         window.scrollTo(0, 0)
         curPage = target
+        if (target === 'empresas') startEmpExperience()
+        else stopEmp()
         const sp = document.getElementById('sp'); if (sp) sp.style.width = '0%'
         const io2 = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io2.unobserve(e.target) } }), { threshold: 0.05 })
         if (el) el.querySelectorAll('.rw:not(.in)').forEach(r => io2.observe(r))
@@ -308,6 +310,47 @@ export default function ClientInit() {
         })
       }, { threshold: 0.3 })
       document.querySelectorAll('.stat-item').forEach(el => ioStats.observe(el))
+
+      /* ── Empresas brand experience ── */
+      let empTimers: ReturnType<typeof setTimeout>[] = []
+      let empAutoActive = false
+
+      function stopEmp() {
+        empTimers.forEach(clearTimeout)
+        empTimers = []
+        empAutoActive = false
+      }
+
+      function startEmpExperience() {
+        stopEmp()
+        const secs = Array.from(document.querySelectorAll<HTMLElement>('#page-empresas .emp-section'))
+        secs.forEach(s => s.classList.remove('emp-vis'))
+        empAutoActive = true
+        // First section animates in after overlay fades
+        empTimers.push(setTimeout(() => secs[0]?.classList.add('emp-vis'), 700))
+        // Auto-scroll to LXMEDIA
+        empTimers.push(setTimeout(() => {
+          if (!empAutoActive) return
+          secs[1]?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+          empTimers.push(setTimeout(() => secs[1]?.classList.add('emp-vis'), 800))
+        }, 4400))
+        // Auto-scroll to LXVIRAL
+        empTimers.push(setTimeout(() => {
+          if (!empAutoActive) return
+          secs[2]?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+          empTimers.push(setTimeout(() => secs[2]?.classList.add('emp-vis'), 800))
+        }, 8800))
+      }
+
+      // IntersectionObserver fallback for manual scrolling
+      const ioEmp = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) (e.target as HTMLElement).classList.add('emp-vis') })
+      }, { threshold: 0.18 })
+      document.querySelectorAll('.emp-section').forEach(s => ioEmp.observe(s))
+
+      // Cancel auto-scroll on manual interaction
+      addListener(window, 'wheel', () => { if (empAutoActive) stopEmp() }, { passive: true })
+      addListener(window, 'touchstart', () => { if (empAutoActive) stopEmp() }, { passive: true })
 
       /* Magnetic buttons */
       document.querySelectorAll<HTMLElement>('.btn-p,.nav-cta-btn').forEach(btn => {

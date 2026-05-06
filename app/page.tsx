@@ -264,12 +264,6 @@ export default function Home() {
       {/* PAGE: EMPRESAS                          */}
       {/* ═══════════════════════════════════════ */}
       <div id="page-empresas" className="page">
-        <div className="page-hdr">
-          <div className="ph-meta">02 / LXSOLUTIONS · Divisiones</div>
-          <h1 className="ph-title">Tres<br /><em>divisiones.</em></h1>
-          <p className="ph-sub">Cada marca opera de forma independiente con su propio modelo de negocio, pero comparten el mismo ADN: sistemas que trabajan por ti.</p>
-        </div>
-
         {/* LXSync */}
         <div className="emp-section emp-sync">
           <div className="container">
