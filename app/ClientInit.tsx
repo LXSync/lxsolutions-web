@@ -204,7 +204,10 @@ export default function ClientInit() {
           finale?.scrollIntoView({ behavior: 'smooth', block: 'start' })
           at(700, () => {
             finale?.classList.add('emp-vis')
-            at(900, () => document.getElementById('page-empresas')?.classList.add('emp-done'))
+            at(900, () => {
+              document.getElementById('page-empresas')?.classList.add('emp-done')
+              empAutoActive = false
+            })
           })
         })
       }

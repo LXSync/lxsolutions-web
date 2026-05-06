@@ -310,7 +310,7 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-off
 .emp-finale.emp-vis .emp-finale-cta{opacity:1;transform:none}
 .emp-finale-cta-label{font-family:var(--f-mono);font-size:10px;letter-spacing:.4em;color:rgba(240,240,235,.35);text-transform:uppercase;margin-bottom:28px}
 .emp-finale-cta .btn{font-size:13px;letter-spacing:.22em;padding:1.3rem 3.2rem;font-weight:600}
-.emp-fb-btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--f-mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;padding:1rem 2rem;margin-top:16px;font-weight:600;transition:all .25s;cursor:pointer;border:1px solid transparent}
+.emp-fb-btn{display:inline-flex;align-items:center;gap:12px;font-family:var(--f-sans);font-size:12px;letter-spacing:.14em;text-transform:uppercase;padding:1.05rem 2.2rem;margin-top:16px;font-weight:600;transition:all .25s;cursor:pointer;border:1px solid transparent}
 .emp-fb-btn-sync{background:var(--accent);color:var(--black);border-color:var(--accent)}
 .emp-fb-btn-sync:hover{background:#fff;border-color:#fff}
 .emp-fb-btn-media{background:var(--red);color:#fff;border-color:var(--red)}
