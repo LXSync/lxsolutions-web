@@ -186,6 +186,14 @@ export default function ClientInit() {
         p?.classList.remove('emp-done', 'emp-collapsed')
       }
 
+      const doFlash = () => {
+        const fl = document.getElementById('emp-flash')
+        if (!fl) return
+        fl.classList.remove('flash')
+        void fl.offsetWidth
+        fl.classList.add('flash')
+      }
+
       const startEmpExperience = () => {
         stopEmp()
         const page = document.getElementById('page-empresas')
@@ -197,26 +205,26 @@ export default function ClientInit() {
         page?.classList.remove('emp-done', 'emp-collapsed')
         empAutoActive = true
         const at = (ms: number, fn: () => void) => { const id = setTimeout(fn, ms); empTimers.push(id) }
-        // Intro screen
+        // Intro screen — 5s
         at(200, () => intro?.classList.add('emp-vis'))
-        // LXSYNC — scroll after 2.5s on intro
-        at(2500, () => { if (!empAutoActive) return; secs[0]?.scrollIntoView({ behavior: 'smooth', block: 'start' }); at(650, () => secs[0]?.classList.add('emp-vis')) })
-        // LXMEDIA — 10s on LXSYNC
-        at(13150, () => { if (!empAutoActive) return; secs[1]?.scrollIntoView({ behavior: 'smooth', block: 'start' }); at(650, () => secs[1]?.classList.add('emp-vis')) })
-        // LXVIRAL — 10s on LXMEDIA
-        at(23800, () => { if (!empAutoActive) return; secs[2]?.scrollIntoView({ behavior: 'smooth', block: 'start' }); at(650, () => secs[2]?.classList.add('emp-vis')) })
-        // Question — 10s on LXVIRAL
-        at(34450, () => { if (!empAutoActive) return; question?.scrollIntoView({ behavior: 'smooth', block: 'start' }); at(700, () => question?.classList.add('emp-vis')) })
-        // Finale — 10s on question
-        at(45150, () => {
+        // LXSYNC — scroll after 5s on intro
+        at(5200, () => { if (!empAutoActive) return; secs[0]?.scrollIntoView({ behavior: 'smooth', block: 'start' }); at(650, () => { doFlash(); secs[0]?.classList.add('emp-vis') }) })
+        // LXMEDIA — 10s on LXSYNC (5200+650+10000=15850)
+        at(15850, () => { if (!empAutoActive) return; secs[1]?.scrollIntoView({ behavior: 'smooth', block: 'start' }); at(650, () => { doFlash(); secs[1]?.classList.add('emp-vis') }) })
+        // LXVIRAL — 10s on LXMEDIA (15850+650+10000=26500)
+        at(26500, () => { if (!empAutoActive) return; secs[2]?.scrollIntoView({ behavior: 'smooth', block: 'start' }); at(650, () => { doFlash(); secs[2]?.classList.add('emp-vis') }) })
+        // Question — 10s on LXVIRAL (26500+650+10000=37150)
+        at(37150, () => { if (!empAutoActive) return; question?.scrollIntoView({ behavior: 'smooth', block: 'start' }); at(700, () => question?.classList.add('emp-vis')) })
+        // Finale — 10s on question (37150+700+10000=47850)
+        at(47850, () => {
           if (!empAutoActive) return
           finale?.scrollIntoView({ behavior: 'smooth', block: 'start' })
           at(700, () => {
+            doFlash()
             finale?.classList.add('emp-vis')
             at(900, () => {
               page?.classList.add('emp-done')
               empAutoActive = false
-              // After fade-out completes, collapse sections and scroll to top
               setTimeout(() => {
                 page?.classList.add('emp-collapsed')
                 window.scrollTo({ top: 0 })

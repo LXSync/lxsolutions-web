@@ -15,6 +15,9 @@ export default function Home() {
       <div id="bg-noise" aria-hidden="true" />
       <div id="bg-scan" aria-hidden="true" />
 
+      {/* Flash overlay */}
+      <div id="emp-flash" aria-hidden="true" />
+
       {/* Scroll progress */}
       <div id="sp" aria-hidden="true" />
 
