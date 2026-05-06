@@ -18,9 +18,6 @@ export default function Home() {
       {/* Scroll progress */}
       <div id="sp" aria-hidden="true" />
 
-      {/* Cursor */}
-      <div id="cur" aria-hidden="true" />
-      <div id="cur-ring" aria-hidden="true" />
 
       {/* Page transition */}
       <div id="pt" aria-hidden="true">
@@ -80,14 +77,14 @@ export default function Home() {
           <div className="nav-divide" />
           <div className="nav-logo-wrap">
             <div className="nav-logo-inner">
-              <a data-nav="home" className="nav-logo" style={{ cursor: 'none' }}>
+              <a data-nav="home" className="nav-logo">
                 <span className="dot" aria-hidden="true" />LXSOLUTIONS
               </a>
             </div>
           </div>
         </div>
         <div className="nav-right">
-          <a data-nav="contacto" className="nav-cta-btn" style={{ cursor: 'none' }}>
+          <a data-nav="contacto" className="nav-cta-btn">
             Agendar llamada <span className="nav-cta-arr">→</span>
           </a>
           <button id="nav-menu-btn" className="nav-menu-btn" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-overlay">
@@ -155,13 +152,13 @@ export default function Home() {
             Automatización, contenido y redes — un solo grupo.
           </p>
           <div className="h-btns">
-            <a data-nav="empresas" className="btn btn-p" style={{ cursor: 'none' }}>
+            <a data-nav="empresas" className="btn btn-p">
               Ver divisiones
               <svg width="14" height="12" viewBox="0 0 14 12" fill="none" aria-hidden="true">
                 <path d="M1 6h12M9 2l4 4-4 4" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </a>
-            <a data-nav="contacto" className="btn btn-ghost" style={{ cursor: 'none' }}>
+            <a data-nav="contacto" className="btn btn-ghost">
               Agendar llamada
             </a>
           </div>
@@ -218,7 +215,7 @@ export default function Home() {
               <p style={{ fontSize: '15px', fontWeight: 300, color: 'rgba(240,240,235,.45)', marginBottom: '40px', maxWidth: '480px', margin: '0 auto 40px' }}>
                 30 minutos. Sin compromiso. Te contamos qué división encaja mejor con lo que necesitas.
               </p>
-              <a data-nav="contacto" className="btn btn-p" style={{ cursor: 'none' }}>
+              <a data-nav="contacto" className="btn btn-p">
                 Agendar llamada →
               </a>
             </div>
@@ -314,7 +311,7 @@ export default function Home() {
                   <span className="emp-tag">Automatización</span>
                 </div>
                 <div className="emp-cta">
-                  <a data-nav="contacto" className="btn btn-p" style={{ cursor: 'none', background: 'var(--red)', color: '#fff' }}>
+                  <a data-nav="contacto" className="btn btn-p" style={{ background: 'var(--red)', color: '#fff' }}>
                     Hablar con LXMEDIA →
                   </a>
                 </div>
@@ -350,7 +347,7 @@ export default function Home() {
                   <span className="emp-tag">Comunidad</span>
                 </div>
                 <div className="emp-cta">
-                  <a data-nav="contacto" className="btn btn-p" style={{ cursor: 'none', background: 'var(--purple)', color: '#070707' }}>
+                  <a data-nav="contacto" className="btn btn-p" style={{ background: 'var(--purple)', color: '#070707' }}>
                     Hablar con LXVIRAL →
                   </a>
                 </div>
@@ -386,15 +383,16 @@ export default function Home() {
                 <span className="emp-fb-tag">Automatización</span>
                 <span className="emp-fb-tag">Agentes IA</span>
                 <span className="emp-fb-tag">B2B</span>
+                <span className="emp-fb-tag">Diagnóstico</span>
               </div>
-              <p className="emp-fb-desc">Automatizamos los procesos que frenan tu negocio. Integración de sistemas, flujos con IA y pipelines a medida.</p>
+              <p className="emp-fb-desc">Diseñamos e implementamos automatizaciones con IA a medida para empresas B2B que quieren eliminar tareas manuales, reducir errores y operar en piloto automático. Empezamos con un diagnóstico operativo — sin vender nada antes de entender tu negocio.</p>
               <ul className="emp-fb-feats">
-                <li>Diagnóstico operativo sin coste</li>
-                <li>Agentes IA que operan 24/7</li>
-                <li>Flujos con n8n, Make y GPT-4o</li>
-                <li>Implementación en 2–4 semanas</li>
+                <li>Diagnóstico operativo: mapeamos dónde pierdes tiempo y dinero antes de proponer nada</li>
+                <li>Agentes IA que gestionan leads, soporte y operaciones 24/7 sin intervención humana</li>
+                <li>Flujos con n8n, Make, GPT-4o y tu stack actual — sin migrar nada</li>
+                <li>Implementación en 2–4 semanas. Precio fijo. Datos 100% tuyos</li>
               </ul>
-              <a className="emp-fb-link" href="https://lxsync-web.vercel.app" target="_blank" rel="noopener noreferrer">Visitar LXSYNC →</a>
+              <a className="emp-fb-btn emp-fb-btn-sync" href="https://lxsync-web.vercel.app" target="_blank" rel="noopener noreferrer">Visitar LXSYNC →</a>
             </div>
             <div className="emp-fb-sep"><div className="emp-fb-sep-line" /></div>
             <div className="emp-fb emp-fb-media">
@@ -402,17 +400,18 @@ export default function Home() {
               <div className="emp-fb-name">LXMEDIA</div>
               <div className="emp-fb-tags">
                 <span className="emp-fb-tag">YouTube</span>
-                <span className="emp-fb-tag">Contenido</span>
                 <span className="emp-fb-tag">Producción</span>
+                <span className="emp-fb-tag">Monetización</span>
+                <span className="emp-fb-tag">Automatización</span>
               </div>
-              <p className="emp-fb-desc">Creamos y gestionamos tu canal de YouTube desde cero. Guion, grabación, edición y publicación — sin que dediques tiempo.</p>
+              <p className="emp-fb-desc">Creamos y gestionamos el canal de YouTube de tu empresa desde cero. Nos encargamos de todo — guion, grabación, edición y publicación — para que tu marca tenga presencia profesional en YouTube sin que tengas que dedicarle tiempo.</p>
               <ul className="emp-fb-feats">
-                <li>Producción completa de video</li>
-                <li>SEO en YouTube y thumbnails</li>
-                <li>Shorts y clips para redes</li>
-                <li>Estrategia de crecimiento de canal</li>
+                <li>Creación del canal y configuración profesional desde cero</li>
+                <li>Producción completa de video: guion, grabación, edición y publicación</li>
+                <li>Contenido adaptado a tu empresa, tu sector y tu audiencia objetivo</li>
+                <li>SEO en YouTube, thumbnails y títulos optimizados para que te encuentren</li>
               </ul>
-              <a className="emp-fb-link" data-nav="contacto" style={{ cursor: 'none' }}>Hablar con LXMEDIA →</a>
+              <a className="emp-fb-btn emp-fb-btn-media" data-nav="contacto">Hablar con LXMEDIA →</a>
             </div>
             <div className="emp-fb-sep"><div className="emp-fb-sep-line" /></div>
             <div className="emp-fb emp-fb-viral">
@@ -422,19 +421,21 @@ export default function Home() {
                 <span className="emp-fb-tag">Instagram</span>
                 <span className="emp-fb-tag">TikTok</span>
                 <span className="emp-fb-tag">Viral</span>
+                <span className="emp-fb-tag">Comunidad</span>
               </div>
-              <p className="emp-fb-desc">Hacemos viral tu empresa en Instagram y TikTok. Creamos el contenido, publicamos y optimizamos para máximo alcance.</p>
+              <p className="emp-fb-desc">Hacemos viral tu empresa en Instagram y TikTok. Creamos el contenido de tu marca, lo publicamos en tus cuentas y lo optimizamos para que llegue al máximo de personas — tú solo tienes que ver cómo crece tu audiencia.</p>
               <ul className="emp-fb-feats">
-                <li>Gestión completa de redes</li>
-                <li>Reels, carruseles y videos cortos</li>
-                <li>Estrategia viral y timing</li>
-                <li>Crecimiento sin inversión en ads</li>
+                <li>Gestión completa de tu Instagram y TikTok: contenido, publicación y comunidad</li>
+                <li>Producción de reels, carruseles y videos cortos adaptados a tu empresa</li>
+                <li>Estrategia viral: formatos, tendencias y timing para maximizar el alcance</li>
+                <li>Tu empresa llega a miles de potenciales clientes sin invertir en publicidad</li>
               </ul>
-              <a className="emp-fb-link" data-nav="contacto" style={{ cursor: 'none' }}>Hablar con LXVIRAL →</a>
+              <a className="emp-fb-btn emp-fb-btn-viral" data-nav="contacto">Hablar con LXVIRAL →</a>
             </div>
           </div>
           <div className="emp-finale-cta">
-            <a data-nav="contacto" className="btn btn-p" style={{ cursor: 'none' }}>Agendar llamada →</a>
+            <div className="emp-finale-cta-label">¿Listo para transformar tu empresa?</div>
+            <a data-nav="contacto" className="btn btn-p">Agendar llamada gratuita →</a>
           </div>
         </div>
 

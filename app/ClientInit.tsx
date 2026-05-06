@@ -170,21 +170,6 @@ export default function ClientInit() {
       addListener(window, 'scroll', onScroll, { passive: true })
       onScroll()
 
-      /* Cursor */
-      const cur = document.getElementById('cur')!, ring = document.getElementById('cur-ring')!
-      let cx = innerWidth / 2, cy = innerHeight / 2, rx = cx, ry = cy
-      addListener(document, 'mousemove', (e: Event) => { const ev = e as MouseEvent; cx = ev.clientX; cy = ev.clientY })
-      addListener(document, 'mouseleave', () => { cur.classList.add('gone'); ring.classList.add('gone') })
-      addListener(document, 'mouseenter', () => { cur.classList.remove('gone'); ring.classList.remove('gone') })
-      function addHover(sel: string) {
-        document.querySelectorAll(sel).forEach(el => {
-          el.addEventListener('mouseenter', () => { cur.classList.add('big'); ring.classList.add('big') })
-          el.addEventListener('mouseleave', () => { cur.classList.remove('big'); ring.classList.remove('big') })
-        })
-      }
-      addHover('a,button,.co-card,.emp-card')
-      ;(function ac() { cur.style.left = cx + 'px'; cur.style.top = cy + 'px'; rx += (cx - rx) * 0.11; ry += (cy - ry) * 0.11; ring.style.left = rx + 'px'; ring.style.top = ry + 'px'; requestAnimationFrame(ac) })()
-
       /* SPA navigation */
       const PAGES: Record<string, string> = { home: 'page-home', empresas: 'page-empresas', contacto: 'page-contacto' }
       const PAGE_LABELS: Record<string, string> = { home: 'Inicio', empresas: 'Divisiones', contacto: 'Contacto' }
@@ -197,6 +182,7 @@ export default function ClientInit() {
       const stopEmp = () => {
         while (empTimers.length) clearTimeout(empTimers.pop()!)
         empAutoActive = false
+        document.getElementById('page-empresas')?.classList.remove('emp-done')
       }
 
       const startEmpExperience = () => {
@@ -206,14 +192,21 @@ export default function ClientInit() {
         ;[...secs, finale].forEach(el => el?.classList.remove('emp-vis'))
         empAutoActive = true
         const at = (ms: number, fn: () => void) => { const id = setTimeout(fn, ms); empTimers.push(id) }
-        // LXSYNC
+        // LXSYNC — 10s
         at(300, () => secs[0]?.classList.add('emp-vis'))
-        // LXMEDIA
-        at(3500, () => { if (!empAutoActive) return; secs[1]?.scrollIntoView({ behavior: 'smooth', block: 'start' }); at(650, () => secs[1]?.classList.add('emp-vis')) })
-        // LXVIRAL
-        at(6800, () => { if (!empAutoActive) return; secs[2]?.scrollIntoView({ behavior: 'smooth', block: 'start' }); at(650, () => secs[2]?.classList.add('emp-vis')) })
-        // Finale — all brands united
-        at(10200, () => { if (!empAutoActive) return; finale?.scrollIntoView({ behavior: 'smooth', block: 'start' }); at(700, () => finale?.classList.add('emp-vis')) })
+        // LXMEDIA — 10s
+        at(10300, () => { if (!empAutoActive) return; secs[1]?.scrollIntoView({ behavior: 'smooth', block: 'start' }); at(650, () => secs[1]?.classList.add('emp-vis')) })
+        // LXVIRAL — 10s
+        at(20300, () => { if (!empAutoActive) return; secs[2]?.scrollIntoView({ behavior: 'smooth', block: 'start' }); at(650, () => secs[2]?.classList.add('emp-vis')) })
+        // Finale — all brands united; hide individual sections after
+        at(30300, () => {
+          if (!empAutoActive) return
+          finale?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+          at(700, () => {
+            finale?.classList.add('emp-vis')
+            at(900, () => document.getElementById('page-empresas')?.classList.add('emp-done'))
+          })
+        })
       }
 
       function doSwitch(target: string) {
