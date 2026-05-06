@@ -190,6 +190,32 @@ export default function ClientInit() {
       const PAGE_LABELS: Record<string, string> = { home: 'Inicio', empresas: 'Divisiones', contacto: 'Contacto' }
       let curPage = 'home', ptLocked = false
 
+      /* ── Empresas brand experience (declared before doSwitch) ── */
+      const empTimers: ReturnType<typeof setTimeout>[] = []
+      let empAutoActive = false
+
+      const stopEmp = () => {
+        while (empTimers.length) clearTimeout(empTimers.pop()!)
+        empAutoActive = false
+      }
+
+      const startEmpExperience = () => {
+        stopEmp()
+        const secs = Array.from(document.querySelectorAll<HTMLElement>('#page-empresas .emp-section'))
+        const finale = document.querySelector<HTMLElement>('#page-empresas .emp-finale')
+        ;[...secs, finale].forEach(el => el?.classList.remove('emp-vis'))
+        empAutoActive = true
+        const at = (ms: number, fn: () => void) => { const id = setTimeout(fn, ms); empTimers.push(id) }
+        // LXSYNC
+        at(300, () => secs[0]?.classList.add('emp-vis'))
+        // LXMEDIA
+        at(3500, () => { if (!empAutoActive) return; secs[1]?.scrollIntoView({ behavior: 'smooth', block: 'start' }); at(650, () => secs[1]?.classList.add('emp-vis')) })
+        // LXVIRAL
+        at(6800, () => { if (!empAutoActive) return; secs[2]?.scrollIntoView({ behavior: 'smooth', block: 'start' }); at(650, () => secs[2]?.classList.add('emp-vis')) })
+        // Finale — all brands united
+        at(10200, () => { if (!empAutoActive) return; finale?.scrollIntoView({ behavior: 'smooth', block: 'start' }); at(700, () => finale?.classList.add('emp-vis')) })
+      }
+
       function doSwitch(target: string) {
         document.querySelectorAll('.page').forEach(p => p.classList.remove('active'))
         const el = document.getElementById(PAGES[target])
@@ -311,42 +337,11 @@ export default function ClientInit() {
       }, { threshold: 0.3 })
       document.querySelectorAll('.stat-item').forEach(el => ioStats.observe(el))
 
-      /* ── Empresas brand experience ── */
-      let empTimers: ReturnType<typeof setTimeout>[] = []
-      let empAutoActive = false
-
-      function stopEmp() {
-        empTimers.forEach(clearTimeout)
-        empTimers = []
-        empAutoActive = false
-      }
-
-      function startEmpExperience() {
-        stopEmp()
-        const secs = Array.from(document.querySelectorAll<HTMLElement>('#page-empresas .emp-section'))
-        secs.forEach(s => s.classList.remove('emp-vis'))
-        empAutoActive = true
-        // First section animates in after overlay fades
-        empTimers.push(setTimeout(() => secs[0]?.classList.add('emp-vis'), 700))
-        // Auto-scroll to LXMEDIA
-        empTimers.push(setTimeout(() => {
-          if (!empAutoActive) return
-          secs[1]?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-          empTimers.push(setTimeout(() => secs[1]?.classList.add('emp-vis'), 800))
-        }, 4400))
-        // Auto-scroll to LXVIRAL
-        empTimers.push(setTimeout(() => {
-          if (!empAutoActive) return
-          secs[2]?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-          empTimers.push(setTimeout(() => secs[2]?.classList.add('emp-vis'), 800))
-        }, 8800))
-      }
-
-      // IntersectionObserver fallback for manual scrolling
+      // IntersectionObserver fallback for manual scroll
       const ioEmp = new IntersectionObserver(entries => {
         entries.forEach(e => { if (e.isIntersecting) (e.target as HTMLElement).classList.add('emp-vis') })
-      }, { threshold: 0.18 })
-      document.querySelectorAll('.emp-section').forEach(s => ioEmp.observe(s))
+      }, { threshold: 0.15 })
+      document.querySelectorAll('.emp-section, .emp-finale').forEach(s => ioEmp.observe(s))
 
       // Cancel auto-scroll on manual interaction
       addListener(window, 'wheel', () => { if (empAutoActive) stopEmp() }, { passive: true })

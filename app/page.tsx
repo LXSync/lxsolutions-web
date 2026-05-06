@@ -372,6 +372,36 @@ export default function Home() {
           </div>
         </div>
 
+        {/* ── Finale: all brands united ── */}
+        <div className="emp-finale">
+          <div className="emp-finale-inner">
+            <div className="emp-finale-top">
+              <div className="emp-fb emp-fb-sync">
+                <div className="emp-fb-num">01</div>
+                <div className="emp-fb-name">LXSYNC</div>
+                <div className="emp-fb-tag">Automatización e IA</div>
+              </div>
+              <div className="emp-fb-conn"><div className="emp-fb-conn-line" /><div className="emp-fb-conn-dot" /></div>
+              <div className="emp-fb emp-fb-media">
+                <div className="emp-fb-num">02</div>
+                <div className="emp-fb-name">LXMEDIA</div>
+                <div className="emp-fb-tag">YouTube &amp; Contenido</div>
+              </div>
+              <div className="emp-fb-conn"><div className="emp-fb-conn-line" /><div className="emp-fb-conn-dot" /></div>
+              <div className="emp-fb emp-fb-viral">
+                <div className="emp-fb-num">03</div>
+                <div className="emp-fb-name">LXVIRAL</div>
+                <div className="emp-fb-tag">Redes Sociales</div>
+              </div>
+            </div>
+            <div className="emp-finale-umb">LXSOLUTIONS · GROUP</div>
+            <h2 className="emp-finale-title">Un solo grupo.<br /><em>Tres divisiones.</em></h2>
+            <div className="emp-finale-cta">
+              <a data-nav="contacto" className="btn btn-p" style={{ cursor: 'none' }}>Agendar llamada →</a>
+            </div>
+          </div>
+        </div>
+
         <footer>
           <div className="ft-top">
             <div className="ft-brand">
