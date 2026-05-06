@@ -1,5 +1,6 @@
 import ClientInit from './ClientInit'
 import CalendlyWidget from './components/CalendlyWidget'
+import ContactForm from './components/ContactForm'
 import VideoPlayer from './components/VideoPlayer'
 
 export default function Home() {
@@ -411,39 +412,23 @@ export default function Home() {
       {/* PAGE: CONTACTO                          */}
       {/* ═══════════════════════════════════════ */}
       <div id="page-contacto" className="page">
-        <div className="page-hdr">
-          <div className="ph-meta">03 / LXSOLUTIONS · Contacto</div>
-          <h1 className="ph-title">Agendar<br /><em>llamada.</em></h1>
-          <p className="ph-sub">30 minutos. Sin compromiso. Te contamos qué división encaja mejor con lo que necesitas — o si no somos la mejor opción, también te lo decimos.</p>
-        </div>
+        <section className="contact-cta rw">
+          <div className="contact-cta-inner">
+            <div className="contact-cta-label">Contacto · LXSOLUTIONS Group</div>
+            <h1 className="contact-cta-title">Hablemos de<br /><em>tu proyecto.</em></h1>
+            <p className="contact-cta-sub">30 minutos. Sin compromiso. Te contamos qué división encaja mejor con lo que necesitas — o si no somos la mejor opción, también te lo decimos.</p>
+          </div>
+        </section>
 
-        <section className="section">
+        <section className="section" style={{ paddingTop: '80px', paddingBottom: '120px' }}>
           <div className="container">
-            <div className="contact-layout">
-              <div className="cf-left">
-                <div className="cf-head">// Información de contacto</div>
-                <div className="cf-info-item">
-                  <div className="cf-info-label">Email</div>
-                  <div className="cf-info-val"><a href="mailto:info@lxsync.com">info@lxsync.com</a></div>
-                </div>
-                <div className="cf-info-item">
-                  <div className="cf-info-label">Ubicación</div>
-                  <div className="cf-info-val">Barcelona, España</div>
-                </div>
-                <div className="cf-info-item">
-                  <div className="cf-info-label">Grupo</div>
-                  <div className="cf-info-val">LXSOLUTIONS · LXSYNC · LXMEDIA · LXVIRAL</div>
-                </div>
-                <div className="cf-info-item">
-                  <div className="cf-info-label">Divisiones</div>
-                  <div className="cf-info-val">
-                    <a href="https://lxsync-web.vercel.app" target="_blank" rel="noopener noreferrer" style={{ display: 'block', marginBottom: '4px' }}>lxsync.com →</a>
-                  </div>
-                </div>
-                <p className="cf-note">// Respuesta en &lt;24h · Sin spam · NDA disponible</p>
+            <div className="contact2-layout rw">
+              <div>
+                <div className="contact2-head">Cuéntanos</div>
+                <ContactForm />
               </div>
-              <div className="cf-right">
-                <div className="cf-cal-head">// Reserva directa</div>
+              <div>
+                <div className="contact2-head">Reserva tu llamada</div>
                 <CalendlyWidget />
                 <p style={{ fontFamily: 'var(--f-mono)', fontSize: '9px', letterSpacing: '.2em', color: 'rgba(240,240,235,.18)', textTransform: 'uppercase', marginTop: '16px' }}>
                   // 30 min · Video call · Sin compromiso
