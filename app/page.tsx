@@ -529,11 +529,6 @@ export default function Home() {
                   </div>
                   <div className="tm2-tags"><span className="tm2-tag">Barcelona</span><span className="tm2-tag">CEO</span><span className="tm2-tag">Producto</span><span className="tm2-tag">B2B</span></div>
                 </div>
-                <div className="tm2-stats">
-                  <div className="tm2-stat"><div className="tms-num" data-count="30">0</div><div className="tms-label">proyectos<br />diagnosticados</div></div>
-                  <div className="tm2-stat"><div className="tms-num">4+</div><div className="tms-label">años en<br />automatización</div></div>
-                  <div className="tm2-stat"><div className="tms-num">100%</div><div className="tms-label">cara visible<br />al cliente</div></div>
-                </div>
               </div>
               <div className="tm2 rw" data-tm="oriol">
                 <div className="tm2-index">02</div>
@@ -552,11 +547,6 @@ export default function Home() {
                     <div className="tm2-skill"><span className="tsk-label">Infraestructura on-premise</span><div className="tsk-bar"><div className="tsk-fill" style={{ ['--w' as string]: '90%' }}></div></div><span className="tsk-pct">90</span></div>
                   </div>
                   <div className="tm2-tags"><span className="tm2-tag">Barcelona</span><span className="tm2-tag">CTO</span><span className="tm2-tag">IA &amp; LLMs</span><span className="tm2-tag">n8n / Make</span></div>
-                </div>
-                <div className="tm2-stats">
-                  <div className="tm2-stat"><div className="tms-num" data-count="40">0</div><div className="tms-label">flujos en<br />producción</div></div>
-                  <div className="tm2-stat"><div className="tms-num">99%</div><div className="tms-label">uptime<br />garantizado</div></div>
-                  <div className="tm2-stat"><div className="tms-num">5+</div><div className="tms-label">años en<br />ingeniería IA</div></div>
                 </div>
               </div>
             </div>

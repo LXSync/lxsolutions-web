@@ -473,7 +473,7 @@ footer{padding:72px 44px 36px;border-top:1px solid var(--line);background:rgba(5
 .sec-head::after{content:'';position:absolute;left:0;right:0;bottom:-32px;height:1px;background:var(--line)}
 .sec-sub{font-size:15px;font-weight:300;color:var(--muted);line-height:1.85;max-width:420px}
 .team2{display:flex;flex-direction:column;gap:1px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.07)}
-.tm2{display:grid;grid-template-columns:80px 200px 1fr 200px;gap:0;background:rgba(5,5,5,.7);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);position:relative;transition:background .4s;overflow:hidden}
+.tm2{display:grid;grid-template-columns:80px 200px 1fr;gap:0;background:rgba(5,5,5,.7);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);position:relative;transition:background .4s;overflow:hidden}
 .tm2::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(to right,transparent,rgba(125,211,252,.0),transparent);transition:background .6s}
 .tm2:hover{background:rgba(255,255,255,.035)}
 .tm2:hover::before{background:linear-gradient(to right,transparent,rgba(125,211,252,.35) 50%,transparent)}
