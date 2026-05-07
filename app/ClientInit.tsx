@@ -171,8 +171,8 @@ export default function ClientInit() {
       onScroll()
 
       /* SPA navigation */
-      const PAGES: Record<string, string> = { home: 'page-home', empresas: 'page-empresas', contacto: 'page-contacto' }
-      const PAGE_LABELS: Record<string, string> = { home: 'Inicio', empresas: 'Divisiones', contacto: 'Contacto' }
+      const PAGES: Record<string, string> = { home: 'page-home', empresas: 'page-empresas', equipo: 'page-equipo', contacto: 'page-contacto' }
+      const PAGE_LABELS: Record<string, string> = { home: 'Inicio', empresas: 'Divisiones', equipo: 'Equipo', contacto: 'Contacto' }
       let curPage = 'home', ptLocked = false
 
       /* ── Empresas brand experience (declared before doSwitch) ── */

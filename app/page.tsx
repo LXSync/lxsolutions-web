@@ -124,8 +124,13 @@ export default function Home() {
               <span className="nvo-text">Divisiones</span>
               <span className="nvo-desc">Tres marcas</span>
             </a>
-            <a data-nav="contacto" className="nvo-link">
+            <a data-nav="equipo" className="nvo-link">
               <span className="nvo-num">03</span>
+              <span className="nvo-text">Equipo</span>
+              <span className="nvo-desc">Fundadores</span>
+            </a>
+            <a data-nav="contacto" className="nvo-link">
+              <span className="nvo-num">04</span>
               <span className="nvo-text">Contacto</span>
               <span className="nvo-desc">Agendar llamada</span>
             </a>
@@ -460,6 +465,103 @@ export default function Home() {
           </div>
         </div>
 
+        <footer>
+          <div className="ft-top">
+            <div className="ft-brand">
+              <div className="ft-umb"><b>LXSOLUTIONS</b> · GRUPO</div>
+              <div className="ft-logo"><span className="dot" />LXSOLUTIONS</div>
+              <p className="ft-tag">Automatización, contenido y redes para empresas. Barcelona, 2026.</p>
+            </div>
+            <div className="ft-col">
+              <h5>Divisiones</h5>
+              <ul>
+                <li><a href="https://lxsync-web.vercel.app" target="_blank" rel="noopener noreferrer">LXSYNC — Automatización</a></li>
+                <li><a data-nav="empresas">LXMEDIA — YouTube</a></li>
+                <li><a data-nav="empresas">LXVIRAL — Redes sociales</a></li>
+              </ul>
+            </div>
+            <div className="ft-col">
+              <h5>Contacto</h5>
+              <ul>
+                <li><a href="mailto:info@lxsync.com">info@lxsync.com</a></li>
+                <li><a data-nav="contacto">Agendar llamada</a></li>
+              </ul>
+            </div>
+          </div>
+          <div className="ft-bot">
+            <div className="ft-copy">© 2026 LXSOLUTIONS · Made in BCN</div>
+            <div className="ft-socials"><a href="#">LinkedIn</a><a href="#">Instagram</a><a href="#">YouTube</a></div>
+          </div>
+        </footer>
+      </div>
+
+      {/* ═══════════════════════════════════════ */}
+      {/* PAGE: EQUIPO                            */}
+      {/* ═══════════════════════════════════════ */}
+      <div id="page-equipo" className="page">
+        <div className="page-hdr container">
+          <p className="ph-title">El<br /><em>equipo.</em></p>
+          <p className="ph-sub">Dos fundadores. Cero intermediarios. Hablas directo con quien construye.</p>
+        </div>
+        <section className="section" style={{ paddingTop: '0' }}>
+          <div className="container">
+            <div className="sec-head rw">
+              <div><p className="sec-label">// Equipo · LXSOLUTIONS</p><h2 className="sec-title">Dos fundadores. <em>Cero intermediarios.</em></h2></div>
+              <p className="sec-sub">Hablas directo con quien construye. Sin account managers, sin capas. Un CEO de producto y un CTO de sistemas.</p>
+            </div>
+            <div className="team2">
+              <div className="tm2 rw" data-tm="alex">
+                <div className="tm2-index">01</div>
+                <div className="tm2-photo">
+                  <div className="tm2-photo-inner"><span className="tm2-initial">A</span><div className="tm2-scan"></div></div>
+                  <div className="tm2-id-badge">ID · 001 · CEO</div>
+                  <div className="tm2-corner tl"></div><div className="tm2-corner br"></div>
+                </div>
+                <div className="tm2-body">
+                  <div className="tm2-role">Co-founder &amp; CEO</div>
+                  <h3 className="tm2-name">Alex<br />Casadevall</h3>
+                  <p className="tm2-bio">Lidera la visión del grupo, el diagnóstico operativo y la relación con cliente. Obsesionado con que cada implementación tenga un KPI detrás — si no se mide, no se implementa.</p>
+                  <div className="tm2-skills">
+                    <div className="tm2-skill"><span className="tsk-label">Diagnóstico operativo</span><div className="tsk-bar"><div className="tsk-fill" style={{ ['--w' as string]: '94%' }}></div></div><span className="tsk-pct">94</span></div>
+                    <div className="tm2-skill"><span className="tsk-label">Estrategia de producto</span><div className="tsk-bar"><div className="tsk-fill" style={{ ['--w' as string]: '88%' }}></div></div><span className="tsk-pct">88</span></div>
+                    <div className="tm2-skill"><span className="tsk-label">Automatización B2B</span><div className="tsk-bar"><div className="tsk-fill" style={{ ['--w' as string]: '85%' }}></div></div><span className="tsk-pct">85</span></div>
+                    <div className="tm2-skill"><span className="tsk-label">Desarrollo web</span><div className="tsk-bar"><div className="tsk-fill" style={{ ['--w' as string]: '95%' }}></div></div><span className="tsk-pct">95</span></div>
+                  </div>
+                  <div className="tm2-tags"><span className="tm2-tag">Barcelona</span><span className="tm2-tag">CEO</span><span className="tm2-tag">Producto</span><span className="tm2-tag">B2B</span></div>
+                </div>
+                <div className="tm2-stats">
+                  <div className="tm2-stat"><div className="tms-num" data-count="30">0</div><div className="tms-label">proyectos<br />diagnosticados</div></div>
+                  <div className="tm2-stat"><div className="tms-num">4+</div><div className="tms-label">años en<br />automatización</div></div>
+                  <div className="tm2-stat"><div className="tms-num">100%</div><div className="tms-label">cara visible<br />al cliente</div></div>
+                </div>
+              </div>
+              <div className="tm2 rw" data-tm="oriol">
+                <div className="tm2-index">02</div>
+                <div className="tm2-photo">
+                  <div className="tm2-photo-inner"><span className="tm2-initial">O</span><div className="tm2-scan"></div></div>
+                  <div className="tm2-id-badge">ID · 002 · CTO</div>
+                  <div className="tm2-corner tl"></div><div className="tm2-corner br"></div>
+                </div>
+                <div className="tm2-body">
+                  <div className="tm2-role">Co-founder &amp; CTO</div>
+                  <h3 className="tm2-name">Oriol<br />Reina</h3>
+                  <p className="tm2-bio">Construye la capa técnica del grupo: agentes de IA, integraciones, modelos on-premise y toda la parte que hace que esto funcione 24/7 sin romperse.</p>
+                  <div className="tm2-skills">
+                    <div className="tm2-skill"><span className="tsk-label">Ingeniería IA / LLMs</span><div className="tsk-bar"><div className="tsk-fill" style={{ ['--w' as string]: '96%' }}></div></div><span className="tsk-pct">96</span></div>
+                    <div className="tm2-skill"><span className="tsk-label">Integraciones &amp; APIs</span><div className="tsk-bar"><div className="tsk-fill" style={{ ['--w' as string]: '92%' }}></div></div><span className="tsk-pct">92</span></div>
+                    <div className="tm2-skill"><span className="tsk-label">Infraestructura on-premise</span><div className="tsk-bar"><div className="tsk-fill" style={{ ['--w' as string]: '90%' }}></div></div><span className="tsk-pct">90</span></div>
+                  </div>
+                  <div className="tm2-tags"><span className="tm2-tag">Barcelona</span><span className="tm2-tag">CTO</span><span className="tm2-tag">IA &amp; LLMs</span><span className="tm2-tag">n8n / Make</span></div>
+                </div>
+                <div className="tm2-stats">
+                  <div className="tm2-stat"><div className="tms-num" data-count="40">0</div><div className="tms-label">flujos en<br />producción</div></div>
+                  <div className="tm2-stat"><div className="tms-num">99%</div><div className="tms-label">uptime<br />garantizado</div></div>
+                  <div className="tm2-stat"><div className="tms-num">5+</div><div className="tms-label">años en<br />ingeniería IA</div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
         <footer>
           <div className="ft-top">
             <div className="ft-brand">
