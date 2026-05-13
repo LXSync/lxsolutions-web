@@ -404,19 +404,19 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-off
 /* ── Footer ── */
 footer{padding:72px 44px 36px;border-top:1px solid var(--line);background:rgba(5,5,5,.7);position:relative;z-index:2}
 .ft-top{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:48px;padding-bottom:56px;border-bottom:1px solid var(--line);margin-bottom:24px}
-.ft-brand .ft-umb{font-family:var(--f-mono);font-size:9px;letter-spacing:.4em;color:var(--mute2);text-transform:uppercase;margin-bottom:10px}
-.ft-brand .ft-logo{font-family:var(--f-disp);font-size:32px;letter-spacing:.08em;color:var(--paper);margin-bottom:18px;display:inline-flex;align-items:center;gap:10px}
+.ft-brand .ft-umb{font-family:var(--f-mono);font-size:9px;letter-spacing:.4em;color:rgba(240,240,235,.65);text-transform:uppercase;margin-bottom:10px}
+.ft-brand .ft-logo{font-family:var(--f-disp);font-size:32px;letter-spacing:.08em;color:#fff;margin-bottom:18px;display:inline-flex;align-items:center;gap:10px}
 .ft-brand .ft-logo .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--accent-dim)}
-.ft-brand .ft-tag{font-size:13px;color:var(--muted);line-height:1.7;max-width:380px}
-.ft-col h5{font-family:var(--f-mono);font-size:9px;letter-spacing:.32em;color:var(--mute2);text-transform:uppercase;margin-bottom:18px}
+.ft-brand .ft-tag{font-size:13px;color:rgba(240,240,235,.85);line-height:1.7;max-width:380px}
+.ft-col h5{font-family:var(--f-mono);font-size:9px;letter-spacing:.32em;color:rgba(240,240,235,.65);text-transform:uppercase;margin-bottom:18px}
 .ft-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
-.ft-col ul li a{font-size:13px;color:rgba(240,240,235,.45);transition:color .25s;cursor:pointer}
-.ft-col ul li a:hover{color:var(--paper)}
+.ft-col ul li a{font-size:13px;color:rgba(240,240,235,.75);transition:color .25s;cursor:pointer}
+.ft-col ul li a:hover{color:#fff}
 .ft-bot{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
-.ft-copy{font-family:var(--f-mono);font-size:10px;letter-spacing:.2em;color:rgba(240,240,235,.2);text-transform:uppercase}
+.ft-copy{font-family:var(--f-mono);font-size:10px;letter-spacing:.2em;color:rgba(240,240,235,.58);text-transform:uppercase}
 .ft-socials{display:flex;gap:20px}
-.ft-socials a{font-family:var(--f-mono);font-size:10px;letter-spacing:.2em;color:rgba(240,240,235,.28);text-transform:uppercase;transition:color .25s;cursor:pointer}
-.ft-socials a:hover{color:var(--paper)}
+.ft-socials a{font-family:var(--f-mono);font-size:10px;letter-spacing:.2em;color:rgba(240,240,235,.65);text-transform:uppercase;transition:color .25s;cursor:pointer}
+.ft-socials a:hover{color:#fff}
 
 /* ── Cinematic intro ── */
 #ci{position:fixed;inset:0;z-index:10000;background:#000;display:flex;align-items:center;justify-content:center;pointer-events:none;opacity:0;transition:opacity .8s ease}
@@ -560,4 +560,30 @@ footer{padding:72px 44px 36px;border-top:1px solid var(--line);background:rgba(5
   .stats-grid{grid-template-columns:1fr 1fr}
   .stat-item:nth-child(2n){border-right:none}
   .h-btns{flex-direction:column;align-items:center}
+  .h-title{font-size:clamp(56px,16vw,180px)}
+  .contact2-layout > div{padding:28px 20px}
+  .emp-left,.emp-right{padding:40px 20px}
+  .emp-name{font-size:clamp(48px,12vw,100px)}
+  .emp-fb{padding:36px 20px}
+  .btn{font-size:11px;padding:.9rem 1.4rem}
+}
+@media(max-width:360px){
+  .container{padding:0 14px}
+  #hero{padding:100px 14px 60px}
+  .h-title{font-size:clamp(48px,16vw,180px)}
+  .h-sub{font-size:14px}
+  .stats-grid{grid-template-columns:1fr}
+  .stat-item{border-right:none;border-bottom:1px solid var(--border)}
+  .stat-item:last-child{border-bottom:none}
+  footer{padding:36px 14px 20px}
+  .emp-left,.emp-right{padding:32px 14px}
+  .emp-fb{padding:28px 14px}
+  .contact2-layout > div{padding:24px 14px}
+  .page-hdr{padding:36px 14px 28px}
+  .nvo-inner{padding:0 14px}
+  .nvo-close{right:14px}
+  .nvo-tl{left:14px}
+  .nvo-br{right:14px}
+  .sec-head{margin-bottom:60px}
+  .btn{font-size:10px;padding:.8rem 1.2rem}
 }

@@ -25,7 +25,7 @@ export default function Home() {
       {/* Page transition */}
       <div id="pt" aria-hidden="true">
         <div className="pt-corner tl">LXSOLUTIONS</div>
-        <div className="pt-corner tr">BCN · 2026</div>
+        <div className="pt-corner tr">GRN · 2026</div>
         <div className="pt-corner bl">GROUP</div>
         <div className="pt-corner br">ES</div>
         <div className="pt-inner">
@@ -50,7 +50,7 @@ export default function Home() {
       <div id="ci" aria-hidden="true">
         <canvas id="ci-canvas" />
         <div className="ci-corner tl">LXSOLUTIONS</div>
-        <div className="ci-corner tr">BARCELONA · 2026</div>
+        <div className="ci-corner tr">GIRONA · 2026</div>
         <div className="ci-corner bl">GROUP · DIVISIÓN 01/03</div>
         <div className="ci-corner br">ES</div>
         <div id="ci-stage">
@@ -102,7 +102,7 @@ export default function Home() {
         <canvas id="nvo-canvas" aria-hidden="true" />
         <div className="nvo-scanlines" aria-hidden="true" />
         <div className="nvo-corner nvo-tl">LXSOLUTIONS · GRUPO</div>
-        <div className="nvo-corner nvo-br">BCN · 2026</div>
+        <div className="nvo-corner nvo-br">GRN · 2026</div>
         <button className="nvo-close" id="nvo-close" aria-label="Cerrar menú">
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
             <path d="M1 1l12 12M13 1L1 13" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
@@ -139,7 +139,7 @@ export default function Home() {
             <a data-nav="contacto" className="nvo-cta">
               Agendar llamada →
             </a>
-            <span className="nvo-contact">info@lxsync.com · Barcelona</span>
+            <span className="nvo-contact">info@lxsync.com · Girona</span>
           </div>
         </div>
       </div>
@@ -152,7 +152,7 @@ export default function Home() {
           <canvas id="h-particles" aria-hidden="true" />
           <div className="h-eyebrow">
             <span className="ey-dot" aria-hidden="true" />
-            LXSOLUTIONS · GRUPO EMPRESARIAL · BARCELONA
+            LXSOLUTIONS · GRUPO EMPRESARIAL · GIRONA
           </div>
           <h1 className="h-title">LXSOLUTIONS</h1>
           <p className="h-sub">
@@ -195,7 +195,7 @@ export default function Home() {
               </div>
               <div className="stat-item">
                 <span className="stat-n" data-count="2026" data-suffix="">2026</span>
-                <div className="stat-l">Fundado · Barcelona</div>
+                <div className="stat-l">Fundado · Girona</div>
                 <div className="stat-bar" />
               </div>
               <div className="stat-item">
@@ -235,7 +235,7 @@ export default function Home() {
             <div className="ft-brand">
               <div className="ft-umb"><b>LXSOLUTIONS</b> · GRUPO</div>
               <div className="ft-logo"><span className="dot" />LXSOLUTIONS</div>
-              <p className="ft-tag">Automatización e IA, contenido YouTube y redes sociales para empresas que ya no quieren depender de procesos manuales. Barcelona, 2026.</p>
+              <p className="ft-tag">Automatización e IA, contenido YouTube y redes sociales para empresas que ya no quieren depender de procesos manuales. Girona, 2026.</p>
             </div>
             <div className="ft-col">
               <h5>Divisiones</h5>
@@ -255,7 +255,7 @@ export default function Home() {
             </div>
           </div>
           <div className="ft-bot">
-            <div className="ft-copy">© 2026 LXSOLUTIONS · Made in BCN</div>
+            <div className="ft-copy">© 2026 LXSOLUTIONS · Made in Girona</div>
             <div className="ft-socials">
               <a href="#">LinkedIn</a>
               <a href="#">Instagram</a>
@@ -470,7 +470,7 @@ export default function Home() {
             <div className="ft-brand">
               <div className="ft-umb"><b>LXSOLUTIONS</b> · GRUPO</div>
               <div className="ft-logo"><span className="dot" />LXSOLUTIONS</div>
-              <p className="ft-tag">Automatización, contenido y redes para empresas. Barcelona, 2026.</p>
+              <p className="ft-tag">Automatización, contenido y redes para empresas. Girona, 2026.</p>
             </div>
             <div className="ft-col">
               <h5>Divisiones</h5>
@@ -489,7 +489,7 @@ export default function Home() {
             </div>
           </div>
           <div className="ft-bot">
-            <div className="ft-copy">© 2026 LXSOLUTIONS · Made in BCN</div>
+            <div className="ft-copy">© 2026 LXSOLUTIONS · Made in Girona</div>
             <div className="ft-socials"><a href="#">LinkedIn</a><a href="#">Instagram</a><a href="#">YouTube</a></div>
           </div>
         </footer>
@@ -527,7 +527,7 @@ export default function Home() {
                     <div className="tm2-skill"><span className="tsk-label">Automatización B2B</span><div className="tsk-bar"><div className="tsk-fill" style={{ ['--w' as string]: '85%' }}></div></div><span className="tsk-pct">85</span></div>
                     <div className="tm2-skill"><span className="tsk-label">Desarrollo web</span><div className="tsk-bar"><div className="tsk-fill" style={{ ['--w' as string]: '95%' }}></div></div><span className="tsk-pct">95</span></div>
                   </div>
-                  <div className="tm2-tags"><span className="tm2-tag">Barcelona</span><span className="tm2-tag">CEO</span><span className="tm2-tag">Producto</span><span className="tm2-tag">B2B</span></div>
+                  <div className="tm2-tags"><span className="tm2-tag">Girona</span><span className="tm2-tag">CEO</span><span className="tm2-tag">Producto</span><span className="tm2-tag">B2B</span></div>
                 </div>
               </div>
               <div className="tm2 rw" data-tm="oriol">
@@ -546,7 +546,7 @@ export default function Home() {
                     <div className="tm2-skill"><span className="tsk-label">Integraciones &amp; APIs</span><div className="tsk-bar"><div className="tsk-fill" style={{ ['--w' as string]: '92%' }}></div></div><span className="tsk-pct">92</span></div>
                     <div className="tm2-skill"><span className="tsk-label">Infraestructura on-premise</span><div className="tsk-bar"><div className="tsk-fill" style={{ ['--w' as string]: '90%' }}></div></div><span className="tsk-pct">90</span></div>
                   </div>
-                  <div className="tm2-tags"><span className="tm2-tag">Barcelona</span><span className="tm2-tag">CTO</span><span className="tm2-tag">IA &amp; LLMs</span><span className="tm2-tag">n8n / Make</span></div>
+                  <div className="tm2-tags"><span className="tm2-tag">Girona</span><span className="tm2-tag">CTO</span><span className="tm2-tag">IA &amp; LLMs</span><span className="tm2-tag">n8n / Make</span></div>
                 </div>
               </div>
             </div>
@@ -557,7 +557,7 @@ export default function Home() {
             <div className="ft-brand">
               <div className="ft-umb"><b>LXSOLUTIONS</b> · GRUPO</div>
               <div className="ft-logo"><span className="dot" />LXSOLUTIONS</div>
-              <p className="ft-tag">Automatización, contenido y redes para empresas. Barcelona, 2026.</p>
+              <p className="ft-tag">Automatización, contenido y redes para empresas. Girona, 2026.</p>
             </div>
             <div className="ft-col">
               <h5>Divisiones</h5>
@@ -576,7 +576,7 @@ export default function Home() {
             </div>
           </div>
           <div className="ft-bot">
-            <div className="ft-copy">© 2026 LXSOLUTIONS · Made in BCN</div>
+            <div className="ft-copy">© 2026 LXSOLUTIONS · Made in Girona</div>
             <div className="ft-socials"><a href="#">LinkedIn</a><a href="#">Instagram</a><a href="#">YouTube</a></div>
           </div>
         </footer>
@@ -617,7 +617,7 @@ export default function Home() {
             <div className="ft-brand">
               <div className="ft-umb"><b>LXSOLUTIONS</b> · GRUPO</div>
               <div className="ft-logo"><span className="dot" />LXSOLUTIONS</div>
-              <p className="ft-tag">Automatización, contenido y redes para empresas. Barcelona, 2026.</p>
+              <p className="ft-tag">Automatización, contenido y redes para empresas. Girona, 2026.</p>
             </div>
             <div className="ft-col">
               <h5>Divisiones</h5>
@@ -636,7 +636,7 @@ export default function Home() {
             </div>
           </div>
           <div className="ft-bot">
-            <div className="ft-copy">© 2026 LXSOLUTIONS · Made in BCN</div>
+            <div className="ft-copy">© 2026 LXSOLUTIONS · Made in Girona</div>
             <div className="ft-socials"><a href="#">LinkedIn</a><a href="#">Instagram</a><a href="#">YouTube</a></div>
           </div>
         </footer>
