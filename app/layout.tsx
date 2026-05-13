@@ -35,7 +35,7 @@ const jsonLd = {
   name: 'LXSOLUTIONS',
   description: 'Grupo empresarial con divisiones en automatización IA, contenido YouTube y redes sociales.',
   url: 'https://lxsolutions.es',
-  email: 'info@lxsync.com',
+  email: 'group@lxsolutions.es',
   address: { '@type': 'PostalAddress', addressLocality: 'Girona', addressCountry: 'ES' },
   subOrganization: [
     { '@type': 'Organization', name: 'LXSYNC', url: 'https://lxsync.com' },

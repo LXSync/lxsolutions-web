@@ -139,7 +139,7 @@ export default function Home() {
             <a data-nav="contacto" className="nvo-cta">
               Agendar llamada →
             </a>
-            <span className="nvo-contact">info@lxsync.com · Girona</span>
+            <span className="nvo-contact">group@lxsolutions.es · Girona</span>
           </div>
         </div>
       </div>
@@ -248,7 +248,7 @@ export default function Home() {
             <div className="ft-col">
               <h5>Contacto</h5>
               <ul>
-                <li><a href="mailto:info@lxsync.com">info@lxsync.com</a></li>
+                <li><a href="mailto:group@lxsolutions.es">group@lxsolutions.es</a></li>
                 <li><a data-nav="contacto">Agendar llamada</a></li>
                 <li><a href="/privacidad">Política de privacidad</a></li>
               </ul>
@@ -483,7 +483,7 @@ export default function Home() {
             <div className="ft-col">
               <h5>Contacto</h5>
               <ul>
-                <li><a href="mailto:info@lxsync.com">info@lxsync.com</a></li>
+                <li><a href="mailto:group@lxsolutions.es">group@lxsolutions.es</a></li>
                 <li><a data-nav="contacto">Agendar llamada</a></li>
               </ul>
             </div>
@@ -570,7 +570,7 @@ export default function Home() {
             <div className="ft-col">
               <h5>Contacto</h5>
               <ul>
-                <li><a href="mailto:info@lxsync.com">info@lxsync.com</a></li>
+                <li><a href="mailto:group@lxsolutions.es">group@lxsolutions.es</a></li>
                 <li><a data-nav="contacto">Agendar llamada</a></li>
               </ul>
             </div>
@@ -630,7 +630,7 @@ export default function Home() {
             <div className="ft-col">
               <h5>Contacto</h5>
               <ul>
-                <li><a href="mailto:info@lxsync.com">info@lxsync.com</a></li>
+                <li><a href="mailto:group@lxsolutions.es">group@lxsolutions.es</a></li>
                 <li><a data-nav="contacto">Agendar llamada</a></li>
               </ul>
             </div>
