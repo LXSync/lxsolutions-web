@@ -407,7 +407,7 @@ export default function ClientInit() {
     setTimeout(() => { brands?.classList.add('on'); ciGroup?.classList.add('sep-on') }, 1300)
     setTimeout(() => { b1?.classList.remove('active'); b2?.classList.add('active') }, 2600)
     setTimeout(() => { b2?.classList.remove('active'); b3?.classList.add('active') }, 3700)
-    setTimeout(() => { b3?.classList.remove('active'); b1?.classList.add('active'); umb?.classList.add('sm') }, 4600)
+    setTimeout(() => { b3?.classList.remove('active'); b1?.classList.add('active'); b2?.classList.add('active'); b3?.classList.add('active'); umb?.classList.add('sm') }, 4600)
     setTimeout(() => now?.classList.add('on'), 5400)
     setTimeout(() => {
       sessionStorage.setItem('lxsol_seen', '1')

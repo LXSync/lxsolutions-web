@@ -9,7 +9,7 @@
   --border:rgba(240,240,235,.07);--border-hi:rgba(240,240,235,.2);
   --f-sans:var(--font-outfit,'Outfit',sans-serif);--f-disp:var(--font-bebas,'Bebas Neue',sans-serif);--f-mono:var(--font-jetbrains,'JetBrains Mono',monospace);
 }
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;overflow-x:hidden}
 body{background:var(--black);color:var(--paper);font-family:var(--f-sans);overflow-x:hidden;-webkit-font-smoothing:antialiased}
 body.loading{overflow:hidden}
 a{color:inherit;text-decoration:none}
@@ -138,6 +138,7 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-off
 #nav-overlay.open .nvo-link:nth-child(1){opacity:1;transform:translateY(0);transition-delay:.08s}
 #nav-overlay.open .nvo-link:nth-child(2){opacity:1;transform:translateY(0);transition-delay:.14s}
 #nav-overlay.open .nvo-link:nth-child(3){opacity:1;transform:translateY(0);transition-delay:.20s}
+#nav-overlay.open .nvo-link:nth-child(4){opacity:1;transform:translateY(0);transition-delay:.26s}
 .nvo-num{font-family:var(--f-mono);font-size:10px;letter-spacing:.36em;color:rgba(125,211,252,.6);text-transform:uppercase;transition:color .3s}
 .nvo-text{line-height:1}
 .nvo-desc{font-family:var(--f-mono);font-size:10px;letter-spacing:.18em;color:rgba(240,240,235,.3);text-transform:uppercase;margin-top:4px}
@@ -147,7 +148,7 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-off
 .nvo-cta:hover{background:#fff;transform:translateY(-2px)}
 .nvo-contact{font-family:var(--f-mono);font-size:10px;letter-spacing:.2em;color:rgba(240,240,235,.25);text-transform:uppercase}
 @media(max-width:768px){.nvo-inner{padding:0 20px}.nvo-close{right:20px}.nvo-tl{left:20px}.nvo-br{right:20px}.nvo-links{grid-template-columns:repeat(2,1fr)}.nvo-link{padding:20px 18px}}
-@media(max-width:480px){.nvo-links{grid-template-columns:1fr}.nvo-brand{margin-bottom:20px}}
+@media(max-width:480px){.nvo-links{grid-template-columns:1fr}.nvo-brand{margin-bottom:20px}.nvo-tl{display:none}.nvo-inner{justify-content:flex-start;padding-top:72px;overflow-y:auto}}
 
 /* ── Shared ── */
 .container{max-width:1280px;margin:0 auto;padding:0 44px}
