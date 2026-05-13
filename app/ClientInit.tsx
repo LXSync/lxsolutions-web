@@ -403,6 +403,8 @@ export default function ClientInit() {
     const b3 = document.getElementById('ci-b3')
 
     ci.classList.add('vis')
+    document.documentElement.style.overflow = 'hidden'
+    document.body.style.overflow = 'hidden'
     setTimeout(() => umb?.classList.add('on'), 300)
     setTimeout(() => { brands?.classList.add('on'); ciGroup?.classList.add('sep-on') }, 1300)
     setTimeout(() => { b1?.classList.remove('active'); b2?.classList.add('active') }, 2600)
@@ -412,7 +414,7 @@ export default function ClientInit() {
     setTimeout(() => {
       sessionStorage.setItem('lxsol_seen', '1')
       ci.classList.remove('vis'); ci.classList.add('out')
-      setTimeout(() => { ci.style.display = 'none'; document.body.style.overflow = ''; initSite() }, 1400)
+      setTimeout(() => { ci.style.display = 'none'; document.documentElement.style.overflow = ''; document.body.style.overflow = ''; initSite() }, 1400)
     }, 7400)
 
     return () => {
