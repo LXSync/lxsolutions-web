@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 
-const N8N_WEBHOOK = 'https://lxserver.zapto.org/webhook/c45e4bfe-d0ca-456e-a80c-1801438635d5'
+const N8N_WEBHOOK = 'https://lxserver.zapto.org/webhook/4a8753ff-2d57-43b2-8137-a05cf8f2d8f9'
 
 export async function POST(req: NextRequest) {
   try {
