@@ -60,9 +60,9 @@ export default function Home() {
             <div className="ci-brands" id="ci-brands">
               <span className="ci-b active" id="ci-b1">LXSYNC</span>
               <span className="ci-dot">·</span>
-              <span className="ci-b" id="ci-b2">LXMEDIA</span>
+              <span className="ci-b red" id="ci-b2">LXMEDIA</span>
               <span className="ci-dot">·</span>
-              <span className="ci-b" id="ci-b3">LXVIRAL</span>
+              <span className="ci-b purple" id="ci-b3">LXVIRAL</span>
             </div>
           </div>
           <div className="ci-now" id="ci-now">
