@@ -594,6 +594,21 @@ export default function Home() {
           </div>
         </section>
 
+        <div className="ct-info-bar">
+          <a className="ct-info-card" href="mailto:group@lxsolutions.es">
+            <div className="ct-info-label">// Email</div>
+            <div className="ct-info-val">group@lxsolutions.es</div>
+          </a>
+          <a className="ct-info-card" href="tel:+34620124873">
+            <div className="ct-info-label">// Alex Casadevall · CEO</div>
+            <div className="ct-info-val">+34 620 124 873</div>
+          </a>
+          <a className="ct-info-card" href="tel:+34699547036">
+            <div className="ct-info-label">// Oriol Reina · CTO</div>
+            <div className="ct-info-val">+34 699 547 036</div>
+          </a>
+        </div>
+
         <section className="section" style={{ paddingTop: '80px', paddingBottom: '120px' }}>
           <div className="container">
             <div className="contact2-layout rw">
