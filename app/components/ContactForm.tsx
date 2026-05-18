@@ -56,9 +56,9 @@ export default function ContactForm() {
         <label className="cf2-lbl">División de interés</label>
         <select className="cf2-sel" value={form.division} onChange={e => set('division', e.target.value)}>
           <option value="">Selecciona una opción</option>
-          <option value="LXSYNC — Automatización e IA">LXSYNC — Automatización e IA</option>
-          <option value="LXMEDIA — YouTube & Contenido">LXMEDIA — YouTube &amp; Contenido</option>
-          <option value="LXVIRAL — Redes Sociales">LXVIRAL — Redes Sociales</option>
+          <option value="LXSYNC - Automatización e IA">LXSYNC - Automatización e IA</option>
+          <option value="LXMEDIA - YouTube & Contenido">LXMEDIA - YouTube &amp; Contenido</option>
+          <option value="LXVIRAL - Redes Sociales">LXVIRAL - Redes Sociales</option>
           <option value="Varias divisiones">Varias divisiones</option>
           <option value="No lo tengo claro aún">No lo tengo claro aún</option>
         </select>
